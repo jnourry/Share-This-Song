@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01AA62FC145D91D200113B4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AA62FB145D91D200113B4B /* UIKit.framework */; };
+		01AA62FE145D91D200113B4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AA62FD145D91D200113B4B /* Foundation.framework */; };
+		01AA6300145D91D200113B4B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AA62FF145D91D200113B4B /* CoreGraphics.framework */; };
+		01AA6306145D91D200113B4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01AA6304145D91D200113B4B /* InfoPlist.strings */; };
+		01AA6308145D91D200113B4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA6307145D91D200113B4B /* main.m */; };
+		01AA630C145D91D200113B4B /* sharethissongAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA630B145D91D200113B4B /* sharethissongAppDelegate.m */; };
+		01AA630F145D91D200113B4B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01AA630D145D91D200113B4B /* MainStoryboard_iPhone.storyboard */; };
+		01AA6312145D91D200113B4B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01AA6310145D91D200113B4B /* MainStoryboard_iPad.storyboard */; };
+		01AA6315145D91D200113B4B /* sharethissongMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA6314145D91D200113B4B /* sharethissongMainViewController.m */; };
+		01AA6318145D91D200113B4B /* sharethissongFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA6317145D91D200113B4B /* sharethissongFlipsideViewController.m */; };
+		01AA6320145D91D300113B4B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AA631F145D91D300113B4B /* SenTestingKit.framework */; };
+		01AA6321145D91D300113B4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AA62FB145D91D200113B4B /* UIKit.framework */; };
+		01AA6322145D91D300113B4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AA62FD145D91D200113B4B /* Foundation.framework */; };
+		01AA632A145D91D300113B4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01AA6328145D91D300113B4B /* InfoPlist.strings */; };
+		01AA632D145D91D300113B4B /* Share_This_SongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA632C145D91D300113B4B /* Share_This_SongTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01AA6323145D91D300113B4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01AA62EE145D91D200113B4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01AA62F6145D91D200113B4B;
+			remoteInfo = "Share This Song";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01AA62F7145D91D200113B4B /* Share This Song.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Share This Song.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01AA62FB145D91D200113B4B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		01AA62FD145D91D200113B4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		01AA62FF145D91D200113B4B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		01AA6303145D91D200113B4B /* Share This Song-Info.plist */ = {isa = PBXFileReference; path = "Share This Song-Info.plist"; sourceTree = "<group>"; };
+		01AA6305145D91D200113B4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		01AA6307145D91D200113B4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		01AA6309145D91D200113B4B /* Share This Song-Prefix.pch */ = {isa = PBXFileReference; path = "Share This Song-Prefix.pch"; sourceTree = "<group>"; };
+		01AA630A145D91D200113B4B /* sharethissongAppDelegate.h */ = {isa = PBXFileReference; path = sharethissongAppDelegate.h; sourceTree = "<group>"; };
+		01AA630B145D91D200113B4B /* sharethissongAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sharethissongAppDelegate.m; sourceTree = "<group>"; };
+		01AA630E145D91D200113B4B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		01AA6311145D91D200113B4B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		01AA6313145D91D200113B4B /* sharethissongMainViewController.h */ = {isa = PBXFileReference; path = sharethissongMainViewController.h; sourceTree = "<group>"; };
+		01AA6314145D91D200113B4B /* sharethissongMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sharethissongMainViewController.m; sourceTree = "<group>"; };
+		01AA6316145D91D200113B4B /* sharethissongFlipsideViewController.h */ = {isa = PBXFileReference; path = sharethissongFlipsideViewController.h; sourceTree = "<group>"; };
+		01AA6317145D91D200113B4B /* sharethissongFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sharethissongFlipsideViewController.m; sourceTree = "<group>"; };
+		01AA631E145D91D300113B4B /* Share This SongTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Share This SongTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01AA631F145D91D300113B4B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		01AA6327145D91D300113B4B /* Share This SongTests-Info.plist */ = {isa = PBXFileReference; path = "Share This SongTests-Info.plist"; sourceTree = "<group>"; };
+		01AA6329145D91D300113B4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		01AA632B145D91D300113B4B /* Share_This_SongTests.h */ = {isa = PBXFileReference; path = Share_This_SongTests.h; sourceTree = "<group>"; };
+		01AA632C145D91D300113B4B /* Share_This_SongTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Share_This_SongTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01AA62F4145D91D200113B4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01AA62FC145D91D200113B4B /* UIKit.framework in Frameworks */,
+				01AA62FE145D91D200113B4B /* Foundation.framework in Frameworks */,
+				01AA6300145D91D200113B4B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01AA631A145D91D300113B4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01AA6320145D91D300113B4B /* SenTestingKit.framework in Frameworks */,
+				01AA6321145D91D300113B4B /* UIKit.framework in Frameworks */,
+				01AA6322145D91D300113B4B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01AA62EC145D91D200113B4B = {
+			isa = PBXGroup;
+			children = (
+				01AA6301145D91D200113B4B /* Share This Song */,
+				01AA6325145D91D300113B4B /* Share This SongTests */,
+				01AA62FA145D91D200113B4B /* Frameworks */,
+				01AA62F8145D91D200113B4B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01AA62F8145D91D200113B4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01AA62F7145D91D200113B4B /* Share This Song.app */,
+				01AA631E145D91D300113B4B /* Share This SongTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01AA62FA145D91D200113B4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01AA62FB145D91D200113B4B /* UIKit.framework */,
+				01AA62FD145D91D200113B4B /* Foundation.framework */,
+				01AA62FF145D91D200113B4B /* CoreGraphics.framework */,
+				01AA631F145D91D300113B4B /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		01AA6301145D91D200113B4B /* Share This Song */ = {
+			isa = PBXGroup;
+			children = (
+				01AA630A145D91D200113B4B /* sharethissongAppDelegate.h */,
+				01AA630B145D91D200113B4B /* sharethissongAppDelegate.m */,
+				01AA630D145D91D200113B4B /* MainStoryboard_iPhone.storyboard */,
+				01AA6310145D91D200113B4B /* MainStoryboard_iPad.storyboard */,
+				01AA6313145D91D200113B4B /* sharethissongMainViewController.h */,
+				01AA6314145D91D200113B4B /* sharethissongMainViewController.m */,
+				01AA6316145D91D200113B4B /* sharethissongFlipsideViewController.h */,
+				01AA6317145D91D200113B4B /* sharethissongFlipsideViewController.m */,
+				01AA6302145D91D200113B4B /* Supporting Files */,
+			);
+			path = "Share This Song";
+			sourceTree = "<group>";
+		};
+		01AA6302145D91D200113B4B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01AA6303145D91D200113B4B /* Share This Song-Info.plist */,
+				01AA6304145D91D200113B4B /* InfoPlist.strings */,
+				01AA6307145D91D200113B4B /* main.m */,
+				01AA6309145D91D200113B4B /* Share This Song-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01AA6325145D91D300113B4B /* Share This SongTests */ = {
+			isa = PBXGroup;
+			children = (
+				01AA632B145D91D300113B4B /* Share_This_SongTests.h */,
+				01AA632C145D91D300113B4B /* Share_This_SongTests.m */,
+				01AA6326145D91D300113B4B /* Supporting Files */,
+			);
+			path = "Share This SongTests";
+			sourceTree = "<group>";
+		};
+		01AA6326145D91D300113B4B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01AA6327145D91D300113B4B /* Share This SongTests-Info.plist */,
+				01AA6328145D91D300113B4B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01AA62F6145D91D200113B4B /* Share This Song */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01AA6330145D91D300113B4B /* Build configuration list for PBXNativeTarget "Share This Song" */;
+			buildPhases = (
+				01AA62F3145D91D200113B4B /* Sources */,
+				01AA62F4145D91D200113B4B /* Frameworks */,
+				01AA62F5145D91D200113B4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Share This Song";
+			productName = "Share This Song";
+			productReference = 01AA62F7145D91D200113B4B /* Share This Song.app */;
+			productType = "com.apple.product-type.application";
+		};
+		01AA631D145D91D300113B4B /* Share This SongTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01AA6333145D91D300113B4B /* Build configuration list for PBXNativeTarget "Share This SongTests" */;
+			buildPhases = (
+				01AA6319145D91D300113B4B /* Sources */,
+				01AA631A145D91D300113B4B /* Frameworks */,
+				01AA631B145D91D300113B4B /* Resources */,
+				01AA631C145D91D300113B4B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01AA6324145D91D300113B4B /* PBXTargetDependency */,
+			);
+			name = "Share This SongTests";
+			productName = "Share This SongTests";
+			productReference = 01AA631E145D91D300113B4B /* Share This SongTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01AA62EE145D91D200113B4B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Personal;
+			};
+			buildConfigurationList = 01AA62F1145D91D200113B4B /* Build configuration list for PBXProject "Share This Song" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 01AA62EC145D91D200113B4B;
+			productRefGroup = 01AA62F8145D91D200113B4B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01AA62F6145D91D200113B4B /* Share This Song */,
+				01AA631D145D91D300113B4B /* Share This SongTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01AA62F5145D91D200113B4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01AA6306145D91D200113B4B /* InfoPlist.strings in Resources */,
+				01AA630F145D91D200113B4B /* MainStoryboard_iPhone.storyboard in Resources */,
+				01AA6312145D91D200113B4B /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01AA631B145D91D300113B4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01AA632A145D91D300113B4B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01AA631C145D91D300113B4B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01AA62F3145D91D200113B4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01AA6308145D91D200113B4B /* main.m in Sources */,
+				01AA630C145D91D200113B4B /* sharethissongAppDelegate.m in Sources */,
+				01AA6315145D91D200113B4B /* sharethissongMainViewController.m in Sources */,
+				01AA6318145D91D200113B4B /* sharethissongFlipsideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01AA6319145D91D300113B4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01AA632D145D91D300113B4B /* Share_This_SongTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01AA6324145D91D300113B4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01AA62F6145D91D200113B4B /* Share This Song */;
+			targetProxy = 01AA6323145D91D300113B4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		01AA6304145D91D200113B4B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01AA6305145D91D200113B4B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		01AA630D145D91D200113B4B /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01AA630E145D91D200113B4B /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		01AA6310145D91D200113B4B /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01AA6311145D91D200113B4B /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		01AA6328145D91D300113B4B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01AA6329145D91D300113B4B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01AA632E145D91D300113B4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		01AA632F145D91D300113B4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01AA6331145D91D300113B4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Share This Song/Share This Song-Prefix.pch";
+				INFOPLIST_FILE = "Share This Song/Share This Song-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		01AA6332145D91D300113B4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Share This Song/Share This Song-Prefix.pch";
+				INFOPLIST_FILE = "Share This Song/Share This Song-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		01AA6334145D91D300113B4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Share This Song.app/Share This Song";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Share This Song/Share This Song-Prefix.pch";
+				INFOPLIST_FILE = "Share This SongTests/Share This SongTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		01AA6335145D91D300113B4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Share This Song.app/Share This Song";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Share This Song/Share This Song-Prefix.pch";
+				INFOPLIST_FILE = "Share This SongTests/Share This SongTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01AA62F1145D91D200113B4B /* Build configuration list for PBXProject "Share This Song" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01AA632E145D91D300113B4B /* Debug */,
+				01AA632F145D91D300113B4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01AA6330145D91D300113B4B /* Build configuration list for PBXNativeTarget "Share This Song" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01AA6331145D91D300113B4B /* Debug */,
+				01AA6332145D91D300113B4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		01AA6333145D91D300113B4B /* Build configuration list for PBXNativeTarget "Share This SongTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01AA6334145D91D300113B4B /* Debug */,
+				01AA6335145D91D300113B4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01AA62EE145D91D200113B4B /* Project object */;
+}
