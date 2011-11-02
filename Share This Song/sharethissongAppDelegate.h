@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"               // Facebook
 
-@interface sharethissongAppDelegate : UIResponder <UIApplicationDelegate>
+@interface sharethissongAppDelegate : UIResponder <UIApplicationDelegate, FBSessionDelegate, FBRequestDelegate>
+    {
+    Facebook *facebook;    // Facebook
+    }
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) Facebook *facebook;  // Facebook
 
 @end

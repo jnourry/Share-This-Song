@@ -10,7 +10,7 @@
 
 @implementation sharethissongFlipsideViewController
 
-@synthesize delegate = _delegate;
+@synthesize delegate = delegate;
 
 - (void)awakeFromNib
 {
