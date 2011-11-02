@@ -24,7 +24,8 @@
     IBOutlet UIButton *shareButton;    
     MPMusicPlayerController *musicPlayer;
     
-    NSString *resultURL;
+    NSString *artworkURL;
+    NSString *iTunesSongURL;
 
 
     }

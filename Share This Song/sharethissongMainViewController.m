@@ -215,11 +215,10 @@
     NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
     
     NSString *myString = [NSString stringWithFormat:
-                        @"http://itunes.apple.com/search?lang=1&output=json&country=%@&term=%@&media=%@&limit=1",
+                        @"http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/itmsSearch?lang=1&output=json&country=%@&term=%@ %@ %@&media=music&limit=1",
                           countryCode,
-                          @"could contains",
                           Artistlabel.text, 
-                          @" ", 
+                          Songlabel.text, 
                           Albumlabel.text];
     
     //http://ajax.googleapis.com/ajax/services/search/images?v=1.0&start=0&num=1&q=
@@ -233,6 +232,7 @@
     NSString *finalString = [myString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 
     NSURL *url = [NSURL URLWithString:finalString];
+    NSLog(@"url : %@",url);
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     request.shouldAttemptPersistentConnection   = NO;
 
@@ -251,34 +251,19 @@
     
     // Actually parsing the JSON
     NSMutableDictionary *jsonDictionary = [parser objectWithString:theJSONresponseString];
-    //NSLog(@"%@",jsonDictionary);
 
+    NSArray *resultList = [jsonDictionary objectForKey:@"results"];
     
-    NSMutableDictionary *responseDataList = [jsonDictionary objectForKey:@"responseData"];
-    //NSLog(@"responseDataList : %@",responseDataList);
-
-    if (responseDataList != nil) {
-        NSArray *resultList = [responseDataList objectForKey:@"results"];
-        int i = 0;
-        for (NSDictionary* internalDict in resultList)
-            {
-                if (i < 1)
-                {
-                    resultURL = [internalDict objectForKey:@"unescapedUrl"];
-                }
-                i = i +1;
-            }
-        NSLog(@"resultURL : %@",resultURL);
-
+    artworkURL = @"";
+    iTunesSongURL = @"";
+    for (NSDictionary* result in resultList)
+    {
+        artworkURL = [result objectForKey:@"artworkUrl100"];
+        iTunesSongURL = [result objectForKey:@"itemLinkUrl"];
     }
-    
-    /*
-     If you want to use this array to persist across methods you might want to
-     declare "colorTitles" as an NSMutableArray in the "JSONAppViewController.h"
-     file and you might even want to create a property in the .h file
-     and synthesize that property in the .m file
-     extract other information such as the color's id or the number of views it
-     has the same way, it will most likely be an NSMutableArray */
+
+    NSLog(@"artworkURL : %@",artworkURL);
+    NSLog(@"iTunesSongURL : %@",iTunesSongURL);
    
     [self postToFacebook];
 }
@@ -300,11 +285,24 @@
                                       @" sur l'album ", 
                                       Albumlabel.text];
     
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @" ", @"caption",
-                                   messageShareThisSong, @"message", 
-                                   resultURL, @"picture",
-                                   nil];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    
+    if (artworkURL == @"")
+        {
+        params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       @" ", @"caption",
+                                       messageShareThisSong, @"message", 
+                                       nil];
+        }
+    else
+        {
+        params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       @" ", @"caption",
+                                       messageShareThisSong, @"message", 
+                                       artworkURL, @"picture",
+                                       iTunesSongURL, @"link",
+                                       nil];
+        }
     NSLog(@"params : %@", params);
     
     sharethissongAppDelegate *appDelegate = (sharethissongAppDelegate *)[[UIApplication sharedApplication] delegate];

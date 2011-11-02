@@ -52,6 +52,8 @@
 		01BBC006145F4CBD00458E7D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBC005145F4CBD00458E7D /* SystemConfiguration.framework */; };
 		01BBC008145F4CC700458E7D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBC007145F4CC700458E7D /* MobileCoreServices.framework */; };
 		01BBC00A145F4CF100458E7D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBC009145F4CF100458E7D /* libz.dylib */; };
+		01BF0A881461C66D00FEC575 /* air-leather-iphone4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01BF0A861461C66D00FEC575 /* air-leather-iphone4.jpg */; };
+		01BF0A891461C66D00FEC575 /* Leather-Background-iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01BF0A871461C66D00FEC575 /* Leather-Background-iPad.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,8 @@
 		01BBC005145F4CBD00458E7D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		01BBC007145F4CC700458E7D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		01BBC009145F4CF100458E7D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		01BF0A861461C66D00FEC575 /* air-leather-iphone4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "air-leather-iphone4.jpg"; sourceTree = "<group>"; };
+		01BF0A871461C66D00FEC575 /* Leather-Background-iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Leather-Background-iPad.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,8 @@
 		01AA6301145D91D200113B4B /* Share This Song */ = {
 			isa = PBXGroup;
 			children = (
+				01BF0A861461C66D00FEC575 /* air-leather-iphone4.jpg */,
+				01BF0A871461C66D00FEC575 /* Leather-Background-iPad.jpg */,
 				01BBBF7B145F480F00458E7D /* Build Scripts */,
 				01BBBF7F145F480F00458E7D /* Classes */,
 				01BBBFD2145F480F00458E7D /* External */,
@@ -443,6 +449,8 @@
 				01BBBFD9145F480F00458E7D /* fetch_mac_ghunit.rb in Resources */,
 				01BBBFDA145F480F00458E7D /* set_version_number.rb in Resources */,
 				01BBC000145F480F00458E7D /* README-GHUnit in Resources */,
+				01BF0A881461C66D00FEC575 /* air-leather-iphone4.jpg in Resources */,
+				01BF0A891461C66D00FEC575 /* Leather-Background-iPad.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
