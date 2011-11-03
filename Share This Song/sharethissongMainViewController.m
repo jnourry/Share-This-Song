@@ -74,11 +74,13 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    /*if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
     } else {
         return YES;
-    }
+    }*/
+    return NO;
+
 }
 
 #pragma mark - Flipside View Controller
@@ -289,20 +291,18 @@
     
     if (artworkURL == @"")
         {
-        params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       @" ", @"caption",
-                                       messageShareThisSong, @"message", 
-                                       nil];
+        artworkURL = @"http://www.kedwards.com/KavaTunes/itunes/images/no_artwork.gif";
+        iTunesSongURL = @"";
         }
-    else
-        {
-        params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       @" ", @"caption",
+    
+    params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                        messageShareThisSong, @"message", 
                                        artworkURL, @"picture",
+                                       Artistlabel.text, @"name",
+                                       Songlabel.text, @"caption",
+                                       Albumlabel.text, @"description",
                                        iTunesSongURL, @"link",
                                        nil];
-        }
     NSLog(@"params : %@", params);
     
     sharethissongAppDelegate *appDelegate = (sharethissongAppDelegate *)[[UIApplication sharedApplication] delegate];

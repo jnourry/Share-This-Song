@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"               // Facebook
+#import "Reachability.h"
+
 
 @interface sharethissongAppDelegate : UIResponder <UIApplicationDelegate, FBSessionDelegate, FBRequestDelegate>
     {
@@ -17,4 +19,10 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain) Facebook *facebook;  // Facebook
 
+- (void) launchFacebook;
+- (BOOL)connected ;
+
+
 @end
+
+
