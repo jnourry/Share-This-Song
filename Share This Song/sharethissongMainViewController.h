@@ -33,6 +33,16 @@
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 @property (nonatomic, retain) MPMusicPlayerController *musicPlayer;
 
+//UI elements
+@property (nonatomic, retain) UILabel *Songlabel;
+@property (nonatomic, retain) UILabel *Artistlabel;
+@property (nonatomic, retain) UILabel *Albumlabel;
+
+@property (nonatomic, retain) UIButton *shareButton;
+
+
+
+
 - (IBAction)sharingRequest:(id)sender;
 
 - (void) registerMediaPlayerNotifications;

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1906" systemVersion="11A511" targetRuntime="iOS.CocoaTouch.iPad" nextObjectID="24" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="902"/>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
     </dependencies>
     <scenes>
         <scene sceneID="4">
@@ -9,14 +10,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="sharethissongMainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Leather-Background-iPad.jpg" id="u7s-aa-U20">
+                                <rect key="frame" x="0.0" y="44" width="1024" height="704"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="U4K-vf-OFv">
+                                <rect key="frame" x="476" y="636" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="mOU-Uc-iDv" userLabel="labelAlbum">
+                                <rect key="frame" x="510" y="385" width="256" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="3Fg-bI-gDV">
+                                <rect key="frame" x="71" y="206" width="256" height="256"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="A4q-I8-vu5" userLabel="labelSong">
+                                <rect key="frame" x="510" y="235" width="256" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Zr8-55-oRN" userLabel="labelArtist">
+                                <rect key="frame" x="510" y="323" width="256" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="13">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="14">
+                                    <navigationItem title="Share This Song" id="14">
                                         <barButtonItem key="rightBarButtonItem" title="Info" id="15">
                                             <connections>
                                                 <action selector="togglePopover:" destination="2" id="23"/>
@@ -27,33 +82,57 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="Albumlabel" destination="mOU-Uc-iDv" id="mTt-1q-4eU"/>
+                        <outlet property="Artistlabel" destination="Zr8-55-oRN" id="r5z-Hm-BCy"/>
+                        <outlet property="Songlabel" destination="A4q-I8-vu5" id="WqE-Kf-UwU"/>
+                        <outlet property="artworkImageView" destination="3Fg-bI-gDV" id="4qm-Ps-JAN"/>
+                        <outlet property="shareButton" destination="U4K-vf-OFv" id="teB-29-9yX"/>
                         <segue destination="5" kind="popover" identifier="showAlternate" popoverAnchorBarButtonItem="15" id="22">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                            <popoverPassthroughViews/>
                         </segue>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-286" y="15"/>
+            <point key="canvasLocation" x="-474" y="-51"/>
         </scene>
         <scene sceneID="7">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6" sceneMemberID="firstResponder"/>
                 <viewController id="5" customClass="sharethissongFlipsideViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ego_bg_ipad.png" id="SB4-gb-KTj">
+                                <rect key="frame" x="0.0" y="44" width="320" height="724"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2011" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="k9n-XU-QLS">
+                                <rect key="frame" x="79" y="416" width="162" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Made by J. NOURRY" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Ob8-mS-Vaa">
+                                <rect key="frame" x="79" y="387" width="162" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="17">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="18">
+                                    <navigationItem id="18">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="19">
                                             <connections>
-                                                <action selector="done:" destination="5" id="21"/>
+                                                <action selector="done:" destination="5" id="GAd-yy-u3Y"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -61,24 +140,38 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <navigationItem key="navigationItem" id="XEH-bb-Grk"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="836" y="101"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Leather-Background-iPad.jpg" width="1024" height="1024"/>
+        <image name="ego_bg_ipad.png" width="1024" height="1024"/>
+    </resources>
     <classes>
         <class className="sharethissongFlipsideViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/sharethissongFlipsideViewController.h"/>
             <relationships>
                 <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="monLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="sharethissongMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/sharethissongMainViewController.h"/>
-            <relationships/>
+            <relationships>
+                <relationship kind="action" name="sharingRequest:"/>
+                <relationship kind="outlet" name="Albumlabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Artistlabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Songlabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="artworkImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="shareButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

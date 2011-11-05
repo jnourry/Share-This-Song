@@ -15,9 +15,14 @@
 @end
 
 @interface sharethissongFlipsideViewController : UIViewController
+{
+    IBOutlet UILabel *monLabel;
+}
 
 @property (weak, nonatomic) IBOutlet id <sharethissongFlipsideViewControllerDelegate> delegate;
 
 - (IBAction)done:(id)sender;
+@property (nonatomic, retain) UILabel *monLabel;
+
 
 @end

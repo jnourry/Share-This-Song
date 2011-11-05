@@ -18,6 +18,13 @@
 // Player musical
 @synthesize musicPlayer;
 
+// Elements d'UI
+@synthesize Songlabel;
+@synthesize Artistlabel;        
+@synthesize Albumlabel;
+@synthesize shareButton; 
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -30,6 +37,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Modification du titre du bouton (selon la langue)
+    [self.shareButton setTitle:NSLocalizedString(@"Share",@"")
+                        forState:UIControlStateNormal];
+    
+    // Modification de l'image du bouton
+    UIImage *ButtonImage = [UIImage imageNamed:@"Grey Button.png"];
+    UIImage *stretchableButton = [ButtonImage stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [shareButton setBackgroundImage:stretchableButton forState:UIControlStateNormal];
     
     
     // La partie player
@@ -79,7 +95,22 @@
     } else {
         return YES;
     }*/
-    return NO;
+    
+    // Si c'est un iPhone : portrait, si c'est un iPad : paysage 
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+        {
+            if (interfaceOrientation == UIDeviceOrientationPortrait)
+                return YES;
+            else
+                return NO;
+        }
+    else
+        {
+            if (interfaceOrientation == UIDeviceOrientationPortrait)
+                return NO;
+            else
+                return YES;
+        }
 
 }
 
@@ -150,9 +181,13 @@
     UIImage *artworkImage = [UIImage imageNamed:@"noArtworkImage.png"];
     MPMediaItemArtwork *artwork = [currentItem valueForProperty: MPMediaItemPropertyArtwork];
     
-    if (artwork) {
+    if (artwork)
+        {
         artworkImage = [artwork imageWithSize: CGSizeMake (256, 256)];
-    }
+        [shareButton setHidden:NO];
+        }
+    else
+        [shareButton setHidden:YES];
     
     [artworkImageView setImage:artworkImage];
     
@@ -160,49 +195,27 @@
     if (titleString) {
         Songlabel.text = [NSString stringWithFormat:@"%@",titleString];
     } else {
-        Songlabel.text = @"Unknown title";
+        Songlabel.text = NSLocalizedString(@"No track being played",@"");
     }
     
     NSString *artistString = [currentItem valueForProperty:MPMediaItemPropertyArtist];
     if (artistString) {
         Artistlabel.text = [NSString stringWithFormat:@"%@",artistString];
     } else {
-        Artistlabel.text = @"Unknown artist";
+        Artistlabel.text = @"";
     }
     
     NSString *albumString = [currentItem valueForProperty:MPMediaItemPropertyAlbumTitle];
     if (albumString) {
         Albumlabel.text = [NSString stringWithFormat:@"%@",albumString];
     } else {
-        Albumlabel.text = @"Unknown album";
+        Albumlabel.text = @"";
     }
 }
 
 - (IBAction)sharingRequest:(id)sender;
 {
-    // Cette partie est inutile, on ne peut pas uploader sur le mur de FB seulement (il faut passer par /me/photos sinon :( )
     
-    /*MPMediaItem *currentItem = [musicPlayer nowPlayingItem];
-    UIImage *artworkImage = [UIImage imageNamed:@"noArtworkImage.png"];
-    MPMediaItemArtwork *artwork = [currentItem valueForProperty: MPMediaItemPropertyArtwork];
-    
-    if (artwork) {
-        artworkImage = [artwork imageWithSize: CGSizeMake (90, 90)];
-    }
-    
-    NSData* imageData = UIImageJPEGRepresentation(artworkImage, 90);
-    */
-
-    
-    /*NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"Test message", 
-                                   @"message", 
-                                   imageData, 
-                                   @"source", 
-                                   nil];*/    
-    
-    // Avec ça, ça marche mais ça stocke la photo dans FB... bad
-    // [theFacebook requestWithGraphPath:@"me/photos" andParams:params andHttpMethod:@"POST" andDelegate:appDelegate];
     [self searchImages];
     
 
@@ -273,6 +286,13 @@
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
     NSError *error = [request error];
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:NSLocalizedString(@"iTunes request failed",@"")
+                          message:[error localizedDescription]
+                          delegate:self 
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];   
+    [alert show];
     NSLog(@"ASIHTTP failed : %@", [error localizedDescription]);
     NSLog(@"Err details    : %@", [error description]);
 }
@@ -280,15 +300,16 @@
 - (void)postToFacebook
 {
     
-    NSString *messageShareThisSong = [NSString stringWithFormat:@"écoute %@%@%@%@%@",
+    NSString *messageShareThisSong = [NSString stringWithFormat:NSLocalizedString(@"listens to %@%@%@%@%@",@""),
                                       Songlabel.text, 
-                                      @" de ",
+                                      NSLocalizedString(@" from ",@""),
                                       Artistlabel.text, 
-                                      @" sur l'album ", 
+                                      NSLocalizedString(@" on the album ",@""),
                                       Albumlabel.text];
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     
+    // Si l'artwork est introuvable sur iTunes, on affiche une image dispo sur internet
     if (artworkURL == @"")
         {
         artworkURL = @"http://www.kedwards.com/KavaTunes/itunes/images/no_artwork.gif";

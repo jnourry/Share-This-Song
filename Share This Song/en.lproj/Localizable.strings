@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  Share This Song
+
+  Created by Jocelyn Nourry on 05/11/11.
+  Copyright (c) 2011 Personal. All rights reserved.
+*/
+
+"Network problem" = "Network problem";
+
+"No internet connection" = "No internet connection";
+
+"No track being played" = "No track being played";
+
+"iTunes request failed" = "iTunes request failed";
+
+"listens to %@%@%@%@%@" = "listens to %@%@%@%@%@";
+
+" from " = " from ";
+
+" on the album " = " on the album ";
+
+"Share" = "Share";
+
+"Infos" = "Infos";
+
+"Done" = "Done";
+
+"Made by J. NOURRY" = "Made by J. NOURRY";
