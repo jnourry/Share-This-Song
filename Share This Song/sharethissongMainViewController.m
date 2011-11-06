@@ -23,7 +23,7 @@
 @synthesize Artistlabel;        
 @synthesize Albumlabel;
 @synthesize shareButton; 
-
+@synthesize artworkImageView;
 
 - (void)didReceiveMemoryWarning
 {
@@ -41,6 +41,14 @@
     // Modification du titre du bouton (selon la langue)
     [self.shareButton setTitle:NSLocalizedString(@"Share",@"")
                         forState:UIControlStateNormal];
+
+    // Modification de l'Image View avec des bords arrondis et noirs
+    [artworkImageView.layer setMasksToBounds:YES];
+    
+    artworkImageView.layer.cornerRadius = 9.0;
+    artworkImageView.layer.masksToBounds = YES;
+    artworkImageView.layer.borderColor = [UIColor blackColor].CGColor;
+    artworkImageView.layer.borderWidth = 3.0;
     
     // Modification de l'image du bouton
     UIImage *ButtonImage = [UIImage imageNamed:@"Grey Button.png"];
@@ -53,6 +61,8 @@
     [self registerMediaPlayerNotifications];
     
     [self updateSongPlayed];
+    
+    [self afficherFacebookLogo]; //temp
 
 }
 
@@ -189,6 +199,7 @@
     else
         [shareButton setHidden:YES];
     
+    
     [artworkImageView setImage:artworkImage];
     
     NSString *titleString = [currentItem valueForProperty:MPMediaItemPropertyTitle];
@@ -218,8 +229,6 @@
     
     [self searchImages];
     
-
-    
 }
 
 - (void)searchImages
@@ -239,7 +248,7 @@
     //http://ajax.googleapis.com/ajax/services/search/images?v=1.0&start=0&num=1&q=
     //http://images.google.com/images?start=0&num=1&q=
     /*
-     http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/itmsSearch?lang=1&output=json&country=%@&term=%@&media=%@&limit=1"
+     http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/itmsSearch?lang=1&output=json&country=%@&term=%@&media=%@&limit=1
      ou plus simple
      http://itunes.apple.com/search?lalistedeparametres
      */
@@ -256,6 +265,8 @@
     [request startAsynchronous];
 }
 
+
+// We have the response from iTunes
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
     // Use when fetching text data
@@ -283,6 +294,7 @@
     [self postToFacebook];
 }
 
+// Pas de retour
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
     NSError *error = [request error];
@@ -297,9 +309,9 @@
     NSLog(@"Err details    : %@", [error description]);
 }
 
+// Post on the user's wall
 - (void)postToFacebook
 {
-    
     NSString *messageShareThisSong = [NSString stringWithFormat:NSLocalizedString(@"listens to %@%@%@%@%@",@""),
                                       Songlabel.text, 
                                       NSLocalizedString(@" from ",@""),
@@ -313,7 +325,7 @@
     if (artworkURL == @"")
         {
         artworkURL = @"http://www.kedwards.com/KavaTunes/itunes/images/no_artwork.gif";
-        iTunesSongURL = @"";
+        iTunesSongURL = @" ";
         }
     
     params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
@@ -332,4 +344,76 @@
     
     [theFacebook requestWithGraphPath:@"me/feed" andParams:params andHttpMethod:@"POST" andDelegate:appDelegate];
 }
+
+
+- (void) afficherFacebookLogo
+{
+    sharethissongAppDelegate *appDelegate = (sharethissongAppDelegate *)[[UIApplication sharedApplication] delegate];
+    Facebook *theFacebook = [appDelegate facebook];
+
+    if ([theFacebook isSessionValid])
+        {
+        // Enlever le bouton facebook
+            
+        NSLog(@"afficherFacebookLogo");
+        UIButton *facebookLogoButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        facebookLogoButton.frame = CGRectMake(18, 412, 20, 20);
+        UIImage *facebookLogoImage = [UIImage imageNamed:@"facebook-little.png"];
+        [facebookLogoButton setBackgroundImage:facebookLogoImage forState:UIControlStateNormal];
+        
+        [facebookLogoButton addTarget:self action:@selector(facebookAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:facebookLogoButton];
+        }
+    else
+        {
+        NSLog(@"afficherFacebookConnect");
+        UIButton *facebookConnectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        facebookConnectButton.frame = CGRectMake(18, 412, 100, 20);
+        UIImage *facebookConnectImage = [UIImage imageNamed:@"facebook-connect.png"];
+        [facebookConnectButton setBackgroundImage:facebookConnectImage forState:UIControlStateNormal];
+        
+        [facebookConnectButton addTarget:self action:@selector(facebookAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:facebookConnectButton];
+
+        }
+}
+
+
+- (IBAction)facebookAction:(id)sender;
+{
+    NSLog(@"facebookAction");
+    sharethissongAppDelegate *appDelegate = (sharethissongAppDelegate *)[[UIApplication sharedApplication] delegate];
+    Facebook *theFacebook = [appDelegate facebook];
+    
+    if ([theFacebook isSessionValid])
+        {
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:NSLocalizedString(@"Logout from Facebook",@"")
+                                  message:NSLocalizedString(@"Do you really want to log out",@"")
+                                  delegate:self 
+                                  cancelButtonTitle:NSLocalizedString(@"Cancel",@"")
+                                  otherButtonTitles:@"OK", nil]; 
+            [alert show];
+        }
+    else
+        {
+        NSArray *permissions =  [NSArray arrayWithObjects: @"read_stream", @"offline_access", @"publish_stream", nil];
+        [theFacebook authorize:permissions];
+        }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex 
+{
+    sharethissongAppDelegate *appDelegate = (sharethissongAppDelegate *)[[UIApplication sharedApplication] delegate];
+    Facebook *theFacebook = [appDelegate facebook];
+	if (buttonIndex == 0) {
+        NSLog(@"user pressed Cancel");
+
+	}
+	else {
+        NSLog(@"user pressed OK");
+        [theFacebook logout:appDelegate];
+	}
+}
+
 @end

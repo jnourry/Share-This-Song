@@ -27,3 +27,11 @@
 "Done" = "OK";
 
 "Made by J. NOURRY" = "Réalisé par J. NOURRY";
+
+"Facebook connection failed" = "La connexion à Facebook a échoué";
+
+"Logout from Facebook" = "Déconnexion de Facebook";
+
+"Do you really want to log out" = "Voulez vous vraiment vous déconnecter";
+
+"Cancel" = "Annuler";

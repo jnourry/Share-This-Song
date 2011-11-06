@@ -10,6 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h> // Access iPod
 #import "ASIHTTPRequest.h"
 #import "JSON.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface sharethissongMainViewController : UIViewController <sharethissongFlipsideViewControllerDelegate, 
                                                                 UIPopoverControllerDelegate,
@@ -37,6 +38,8 @@
 @property (nonatomic, retain) UILabel *Songlabel;
 @property (nonatomic, retain) UILabel *Artistlabel;
 @property (nonatomic, retain) UILabel *Albumlabel;
+@property (nonatomic, retain) UIImageView *artworkImageView;
+
 
 @property (nonatomic, retain) UIButton *shareButton;
 
@@ -48,6 +51,8 @@
 - (void) registerMediaPlayerNotifications;
 - (void) updateSongPlayed;
 - (void) searchImages;
-- (void)postToFacebook;
+- (void) postToFacebook;
+- (void) afficherFacebookLogo;
+
 
 @end

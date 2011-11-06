@@ -42,6 +42,8 @@
 		01AA635E145D9B0E00113B4B /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA634E145D9B0D00113B4B /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01AA635F145D9B0E00113B4B /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA6350145D9B0D00113B4B /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01AA6360145D9B0E00113B4B /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA6352145D9B0D00113B4B /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		01ADA2FC1465ED7600C59515 /* facebook-connect.png in Resources */ = {isa = PBXBuildFile; fileRef = 01ADA2FA1465ED7600C59515 /* facebook-connect.png */; };
+		01ADA2FF1465F09E00C59515 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01ADA2FE1465F09E00C59515 /* QuartzCore.framework */; };
 		01BBBFD8145F480F00458E7D /* fetch_ios_ghunit.rb in Resources */ = {isa = PBXBuildFile; fileRef = 01BBBF7C145F480F00458E7D /* fetch_ios_ghunit.rb */; };
 		01BBBFD9145F480F00458E7D /* fetch_mac_ghunit.rb in Resources */ = {isa = PBXBuildFile; fileRef = 01BBBF7D145F480F00458E7D /* fetch_mac_ghunit.rb */; };
 		01BBBFDA145F480F00458E7D /* set_version_number.rb in Resources */ = {isa = PBXBuildFile; fileRef = 01BBBF7E145F480F00458E7D /* set_version_number.rb */; };
@@ -59,6 +61,7 @@
 		01BBC006145F4CBD00458E7D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBC005145F4CBD00458E7D /* SystemConfiguration.framework */; };
 		01BBC008145F4CC700458E7D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBC007145F4CC700458E7D /* MobileCoreServices.framework */; };
 		01BBC00A145F4CF100458E7D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBC009145F4CF100458E7D /* libz.dylib */; };
+		01DB60931466953E0029525C /* facebook-little.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DB60921466953D0029525C /* facebook-little.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +130,8 @@
 		01AA6350145D9B0D00113B4B /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		01AA6351145D9B0D00113B4B /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		01AA6352145D9B0D00113B4B /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		01ADA2FA1465ED7600C59515 /* facebook-connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-connect.png"; sourceTree = "<group>"; };
+		01ADA2FE1465F09E00C59515 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		01BBBF7C145F480F00458E7D /* fetch_ios_ghunit.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = fetch_ios_ghunit.rb; sourceTree = "<group>"; };
 		01BBBF7D145F480F00458E7D /* fetch_mac_ghunit.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = fetch_mac_ghunit.rb; sourceTree = "<group>"; };
 		01BBBF7E145F480F00458E7D /* set_version_number.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = set_version_number.rb; sourceTree = "<group>"; };
@@ -157,6 +162,7 @@
 		01BBC005145F4CBD00458E7D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		01BBC007145F4CC700458E7D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		01BBC009145F4CF100458E7D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		01DB60921466953D0029525C /* facebook-little.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-little.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01ADA2FF1465F09E00C59515 /* QuartzCore.framework in Frameworks */,
 				01BBC00A145F4CF100458E7D /* libz.dylib in Frameworks */,
 				01AA6300145D91D200113B4B /* CoreGraphics.framework in Frameworks */,
 				01BBC008145F4CC700458E7D /* MobileCoreServices.framework in Frameworks */,
@@ -191,6 +198,8 @@
 		017CD9051465D179006832C8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				01DB60921466953D0029525C /* facebook-little.png */,
+				01ADA2FA1465ED7600C59515 /* facebook-connect.png */,
 				017CD9061465D179006832C8 /* air-leather-iphone4.jpg */,
 				017CD9071465D179006832C8 /* ego_bg_ipad.png */,
 				017CD9081465D179006832C8 /* ego_bg_iphone4.png */,
@@ -205,6 +214,7 @@
 		01AA62EC145D91D200113B4B = {
 			isa = PBXGroup;
 			children = (
+				01ADA2FE1465F09E00C59515 /* QuartzCore.framework */,
 				01BBC009145F4CF100458E7D /* libz.dylib */,
 				01BBC007145F4CC700458E7D /* MobileCoreServices.framework */,
 				01BBC005145F4CBD00458E7D /* SystemConfiguration.framework */,
@@ -245,7 +255,6 @@
 				01BBBF7F145F480F00458E7D /* Classes */,
 				01BBBFD2145F480F00458E7D /* External */,
 				01AA630A145D91D200113B4B /* sharethissongAppDelegate.h */,
-				01AA6336145D9B0D00113B4B /* Facebook */,
 				017CD8F71465B808006832C8 /* sharethissongAppDelegate.m */,
 				01AA630D145D91D200113B4B /* MainStoryboard_iPhone.storyboard */,
 				01AA6310145D91D200113B4B /* MainStoryboard_iPad.storyboard */,
@@ -305,7 +314,7 @@
 				01AA6345145D9B0D00113B4B /* JSON */,
 			);
 			name = Facebook;
-			path = src;
+			path = "../../Share This Song/Share This Song/src";
 			sourceTree = "<group>";
 		};
 		01AA6345145D9B0D00113B4B /* JSON */ = {
@@ -370,6 +379,7 @@
 		01BBBFD2145F480F00458E7D /* External */ = {
 			isa = PBXGroup;
 			children = (
+				01AA6336145D9B0D00113B4B /* Facebook */,
 				01BBBFD3145F480F00458E7D /* GHUnit */,
 				01BBBFD5145F480F00458E7D /* Reachability */,
 			);
@@ -482,6 +492,8 @@
 				017CD9111465D179006832C8 /* Grey Button.png in Resources */,
 				017CD9121465D179006832C8 /* Leather-Background-iPad.jpg in Resources */,
 				017CD9131465D179006832C8 /* noArtworkImage.png in Resources */,
+				01ADA2FC1465ED7600C59515 /* facebook-connect.png in Resources */,
+				01DB60931466953E0029525C /* facebook-little.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

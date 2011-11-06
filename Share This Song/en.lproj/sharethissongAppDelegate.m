@@ -112,10 +112,17 @@
 
 - (void)request:(FBRequest *)request didFailWithError:(NSError *)error
 {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:NSLocalizedString(@"Facebook connection failed",@"")
+                          message:[error localizedDescription]
+                          delegate:self 
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:
+                          nil];   
+    [alert show];
+    
     NSLog(@"did fail: %@", [error localizedDescription]);
     NSLog(@"Err details: %@", [error description]);
-    NSArray *permissions =  [NSArray arrayWithObjects: @"read_stream", @"offline_access", @"publish_stream", nil];
-    [facebook authorize:permissions];
 
 }
 
