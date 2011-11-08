@@ -97,6 +97,12 @@
     [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
     
+    /*UIViewController mainViewController = self.nextResponder.inputView;
+    [self.nextResponder.inputView updateFacebookLogo];
+    [self.window.rootViewController    updateFacebookLogo];
+     */
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView" object:nil];
+
 }
 
 - (void)fbDidNotLogin:(BOOL)cancelled
@@ -133,6 +139,9 @@
 
 - (void) launchFacebook
 {
+    
+    NSLog(@"launch %@",self.inputView);
+    
     facebook = [[Facebook alloc] initWithAppId:@"244717028920397" andDelegate:self];  // Facebook
     
     /* 
@@ -156,6 +165,7 @@
     }
 }
 
+// Test internet connectivity
 - (BOOL)connected 
 {
     Reachability *reachability = [Reachability reachabilityForInternetConnection];  
