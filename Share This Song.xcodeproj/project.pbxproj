@@ -242,7 +242,7 @@
 			children = (
 				017CD9051465D179006832C8 /* images */,
 				01BBBF7B145F480F00458E7D /* Build Scripts */,
-				01BBBF7F145F480F00458E7D /* Classes */,
+				01BBBF7F145F480F00458E7D /* ASIHTTP Classes */,
 				01BBBFD2145F480F00458E7D /* External */,
 				01AA630A145D91D200113B4B /* sharethissongAppDelegate.h */,
 				01FB80CC1468471B009A687E /* sharethissongAppDelegate.m */,
@@ -319,7 +319,7 @@
 			path = "../../pokeb-asi-http-request/Build Scripts";
 			sourceTree = "<group>";
 		};
-		01BBBF7F145F480F00458E7D /* Classes */ = {
+		01BBBF7F145F480F00458E7D /* ASIHTTP Classes */ = {
 			isa = PBXGroup;
 			children = (
 				01BBBF80145F480F00458E7D /* ASIAuthenticationDialog.h */,
@@ -343,7 +343,7 @@
 				01BBBF92145F480F00458E7D /* ASINetworkQueue.m */,
 				01BBBF93145F480F00458E7D /* ASIProgressDelegate.h */,
 			);
-			name = Classes;
+			name = "ASIHTTP Classes";
 			path = "../../pokeb-asi-http-request/Classes";
 			sourceTree = "<group>";
 		};

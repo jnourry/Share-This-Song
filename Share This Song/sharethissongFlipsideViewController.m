@@ -12,6 +12,8 @@
 
 @synthesize delegate = delegate;
 @synthesize monLabel;
+@synthesize instructionsLabel;
+@synthesize monTextView;
 
 - (void)awakeFromNib
 {
@@ -34,6 +36,13 @@
     self.navigationItem.title = NSLocalizedString(@"Infos", @"");    // ne marche pas :(
     
     monLabel.text = NSLocalizedString(@"Made by J. NOURRY", @"");
+    instructionsLabel.text = NSLocalizedString(@"Instructions :", @"");
+    monTextView.text = NSLocalizedString(@"instructions text", @"");
+    
+    // Modification du Text View avec des bords arrondis et noirs
+    [monTextView.layer setMasksToBounds:YES];
+    monTextView.layer.cornerRadius = 9.0;
+
 
 	// Do any additional setup after loading the view, typically from a nib.
 }

@@ -70,6 +70,13 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="off" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Kmh-b9-ehm" userLabel="facebook on off">
+                                <rect key="frame" x="65" y="99" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EHl-9W-m9t" userLabel="Facebook button">
                                 <rect key="frame" x="71" y="69" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -109,6 +116,7 @@
                         <outlet property="Songlabel" destination="A4q-I8-vu5" id="WqE-Kf-UwU"/>
                         <outlet property="artworkImageView" destination="3Fg-bI-gDV" id="4qm-Ps-JAN"/>
                         <outlet property="facebookButton" destination="EHl-9W-m9t" id="i8g-Ne-AQX"/>
+                        <outlet property="fbOnOfflabel" destination="Kmh-b9-ehm" id="WfF-XH-VNk"/>
                         <outlet property="shareButton" destination="U4K-vf-OFv" id="teB-29-9yX"/>
                         <segue destination="5" kind="popover" identifier="showAlternate" popoverAnchorBarButtonItem="15" id="22">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -131,17 +139,35 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2011" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="k9n-XU-QLS">
-                                <rect key="frame" x="79" y="416" width="162" height="21"/>
+                                <rect key="frame" x="79" y="430" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Made by J. NOURRY" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Ob8-mS-Vaa">
-                                <rect key="frame" x="79" y="387" width="162" height="21"/>
+                                <rect key="frame" x="79" y="401" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" id="CSR-pS-18y">
+                                <rect key="frame" x="37" y="128" width="263" height="202"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="0.19" colorSpace="calibratedWhite"/>
+                                <string key="text">Tap the ‘Share’ button to post the track currently playing on iPod app on your FB wall.
+
+You can use the Facebook button to log in or out.</string>
+                                <color key="textColor" red="0.35356987940000001" green="0.89091845469999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Instructions :" lineBreakMode="tailTruncation" minimumFontSize="10" id="eZc-N8-fA0">
+                                <rect key="frame" x="20" y="93" width="99" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.2905231237" green="0.62269893269999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="17">
@@ -163,6 +189,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="XEH-bb-Grk"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="instructionsLabel" destination="eZc-N8-fA0" id="r7F-74-A9K"/>
+                        <outlet property="monTextView" destination="CSR-pS-18y" id="X39-X2-zaT"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="836" y="101"/>
@@ -179,7 +209,9 @@
             <relationships>
                 <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="instructionsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="monLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="monTextView" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="sharethissongMainViewController" superclassName="UIViewController">
@@ -192,6 +224,7 @@
                 <relationship kind="outlet" name="Songlabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="artworkImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="fbOnOfflabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="shareButton" candidateClass="UIButton"/>
             </relationships>
         </class>

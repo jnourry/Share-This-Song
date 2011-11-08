@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+
 
 @class sharethissongFlipsideViewController;
 
@@ -17,12 +19,17 @@
 @interface sharethissongFlipsideViewController : UIViewController
 {
     IBOutlet UILabel *monLabel;
+    IBOutlet UILabel *instructionsLabel;
+    IBOutlet UITextView *monTextView;
+
 }
 
 @property (weak, nonatomic) IBOutlet id <sharethissongFlipsideViewControllerDelegate> delegate;
 
 - (IBAction)done:(id)sender;
 @property (nonatomic, retain) UILabel *monLabel;
+@property (nonatomic, retain) UILabel *instructionsLabel;
+@property (nonatomic, retain) UITextView *monTextView;
 
 
 @end

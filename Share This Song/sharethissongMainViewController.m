@@ -21,6 +21,7 @@
 @synthesize Songlabel;
 @synthesize Artistlabel;        
 @synthesize Albumlabel;
+@synthesize fbOnOfflabel;
 @synthesize shareButton; 
 @synthesize facebookButton; 
 @synthesize artworkImageView;
@@ -57,7 +58,7 @@
     // Modification du bouton Facebook
     facebookButton.layer.masksToBounds = YES;
     facebookButton.layer.cornerRadius = 15.0;
-    facebookButton.layer.borderWidth = 1.5;
+    facebookButton.layer.borderWidth = 1.0;
     
     // La partie player
     musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
@@ -379,12 +380,16 @@
         facebookButton.layer.borderColor = [UIColor greenColor].CGColor;
         facebookButton.alpha = 1.0;
         [shareButton setHidden:NO];
+        fbOnOfflabel.text = @"on";
+        fbOnOfflabel.textColor = [UIColor greenColor];
         }
     else
         {
         facebookButton.layer.borderColor = [UIColor redColor].CGColor;
         facebookButton.alpha = 0.5;
         [shareButton setHidden:YES];
+        fbOnOfflabel.text = @"off";
+        fbOnOfflabel.textColor = [UIColor redColor];
         }
 }
 

@@ -108,6 +108,7 @@
 - (void)fbDidNotLogin:(BOOL)cancelled
 {
     NSLog(@"fbDidNotLogin");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView" object:nil];
 
 }
 

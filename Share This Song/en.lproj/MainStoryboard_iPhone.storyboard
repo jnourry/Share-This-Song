@@ -103,6 +103,13 @@
                                     <action selector="facebookAction:" destination="2" eventType="touchUpInside" id="7Ru-LV-X3v"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="off" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Rh2-AG-a4Z" userLabel="facebook on off">
+                                <rect key="frame" x="14" y="437" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -112,6 +119,7 @@
                         <outlet property="Songlabel" destination="GeD-uI-Uyg" id="B6x-uB-B5m"/>
                         <outlet property="artworkImageView" destination="ipY-PM-Rfc" id="wHN-n7-GMK"/>
                         <outlet property="facebookButton" destination="d8g-z4-NYQ" id="pPE-gW-egL"/>
+                        <outlet property="fbOnOfflabel" destination="Rh2-AG-a4Z" id="YMz-Sl-c7r"/>
                         <outlet property="shareButton" destination="8Nt-sj-3pU" id="pTR-Zl-jx3"/>
                     </connections>
                 </viewController>
@@ -144,19 +152,37 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Made by J. NOURRY" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="L7g-sP-pPc">
-                                <rect key="frame" x="79" y="205" width="162" height="21"/>
+                                <rect key="frame" x="79" y="393" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2011" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="v6H-mf-I6y">
-                                <rect key="frame" x="80" y="234" width="162" height="21"/>
+                                <rect key="frame" x="136" y="414" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Instructions :" lineBreakMode="tailTruncation" minimumFontSize="10" id="rXg-ml-nOz">
+                                <rect key="frame" x="20" y="117" width="99" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.29052312369145628" green="0.62269893270623056" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" id="lnz-ES-kru">
+                                <rect key="frame" x="31" y="155" width="259" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.19" colorSpace="calibratedWhite"/>
+                                <string key="text">Tap the ‘Share’ button to post the track currently playing on iPod app on your FB wall.
+
+You can use the Facebook button to log in or out.</string>
+                                <color key="textColor" red="0.35356987939418671" green="0.89091845467844866" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration">
@@ -165,7 +191,9 @@
                     </view>
                     <connections>
                         <outlet property="delegate" destination="2" id="15"/>
-                        <outlet property="monLabel" destination="L7g-sP-pPc" id="k11-FI-d88"/>
+                        <outlet property="instructionsLabel" destination="rXg-ml-nOz" id="I6i-pn-CnY"/>
+                        <outlet property="monLabel" destination="L7g-sP-pPc" id="ygw-kw-xSl"/>
+                        <outlet property="monTextView" destination="lnz-ES-kru" id="6pI-4o-kQD"/>
                     </connections>
                 </viewController>
             </objects>
@@ -183,7 +211,9 @@
             <relationships>
                 <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="instructionsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="monLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="monTextView" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="sharethissongMainViewController" superclassName="UIViewController">
@@ -196,6 +226,7 @@
                 <relationship kind="outlet" name="Songlabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="artworkImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="fbOnOfflabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="shareButton" candidateClass="UIButton"/>
             </relationships>
         </class>

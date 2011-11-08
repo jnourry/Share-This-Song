@@ -25,6 +25,7 @@
     IBOutlet UILabel *Songlabel;
     IBOutlet UILabel *Artistlabel;        
     IBOutlet UILabel *Albumlabel;
+    IBOutlet UILabel *fbOnOfflabel;
         
     IBOutlet UIButton *shareButton;    
     IBOutlet UIButton *facebookButton;    
@@ -44,6 +45,7 @@
 @property (nonatomic, retain) UILabel *Songlabel;
 @property (nonatomic, retain) UILabel *Artistlabel;
 @property (nonatomic, retain) UILabel *Albumlabel;
+@property (nonatomic, retain) UILabel *fbOnOfflabel;
 @property (nonatomic, retain) UIImageView *artworkImageView;
 
 @property (nonatomic, retain) UIButton *shareButton;
