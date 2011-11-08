@@ -10,7 +10,6 @@
 #import "sharethissongAppDelegate.h"
 
 
-
 @implementation sharethissongMainViewController
 
 @synthesize flipsidePopoverController = _flipsidePopoverController;
@@ -23,6 +22,7 @@
 @synthesize Artistlabel;        
 @synthesize Albumlabel;
 @synthesize shareButton; 
+@synthesize facebookButton; 
 @synthesize artworkImageView;
 
 - (void)didReceiveMemoryWarning
@@ -46,15 +46,18 @@
     [artworkImageView.layer setMasksToBounds:YES];
     
     artworkImageView.layer.cornerRadius = 9.0;
-    artworkImageView.layer.masksToBounds = YES;
     artworkImageView.layer.borderColor = [UIColor blackColor].CGColor;
     artworkImageView.layer.borderWidth = 3.0;
     
-    // Modification de l'image du bouton
+    // Modification de l'image du bouton de partage
     UIImage *ButtonImage = [UIImage imageNamed:@"Grey Button.png"];
     UIImage *stretchableButton = [ButtonImage stretchableImageWithLeftCapWidth:12 topCapHeight:0];
     [shareButton setBackgroundImage:stretchableButton forState:UIControlStateNormal];
     
+    // Modification du bouton Facebook
+    facebookButton.layer.masksToBounds = YES;
+    facebookButton.layer.cornerRadius = 15.0;
+    facebookButton.layer.borderWidth = 1.5;
     
     // La partie player
     musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
@@ -62,7 +65,10 @@
     
     [self updateSongPlayed];
     
-    [self afficherFacebookLogo]; //temp
+    [self updateFacebookLogo];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"refreshView" object:nil];
+
 
 }
 
@@ -74,6 +80,9 @@
     [[NSNotificationCenter defaultCenter] removeObserver: self
                                                     name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification
                                                   object: musicPlayer];
+    [[NSNotificationCenter defaultCenter] removeObserver: self
+                                                    name: @"refreshView"
+                                                  object: nil];
     [musicPlayer endGeneratingPlaybackNotifications];
 }
 
@@ -238,12 +247,23 @@
     
     NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
     
-    NSString *myString = [NSString stringWithFormat:
-                        @"http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/itmsSearch?lang=1&output=json&country=%@&term=%@ %@ %@&media=music&limit=1",
-                          countryCode,
+    NSString *myParams = [NSString stringWithFormat:
+                          @"%@ %@ %@",
                           Artistlabel.text, 
                           Songlabel.text, 
                           Albumlabel.text];
+    
+    NSString *myParamsEncoded = (__bridge_transfer NSString * )
+    CFURLCreateStringByAddingPercentEscapes(NULL,
+                                            (__bridge CFStringRef)myParams,
+                                            NULL,
+                                            (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                            kCFStringEncodingUTF8);
+    
+    NSString *finalString = [NSString stringWithFormat:
+                        @"http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/itmsSearch?lang=1&output=json&country=%@&term=%@&media=music&limit=1",
+                          countryCode,
+                          myParamsEncoded];
     
     //http://ajax.googleapis.com/ajax/services/search/images?v=1.0&start=0&num=1&q=
     //http://images.google.com/images?start=0&num=1&q=
@@ -253,12 +273,11 @@
      http://itunes.apple.com/search?lalistedeparametres
      */
     
-    NSString *finalString = [myString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-
     NSURL *url = [NSURL URLWithString:finalString];
     NSLog(@"url : %@",url);
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     request.shouldAttemptPersistentConnection   = NO;
+    [ASIHTTPRequest setDefaultTimeOutSeconds:10];
 
 
     [request setDelegate:self];
@@ -307,6 +326,10 @@
     [alert show];
     NSLog(@"ASIHTTP failed : %@", [error localizedDescription]);
     NSLog(@"Err details    : %@", [error description]);
+
+    // We still post to Facebook, but there won't be any artwork link
+    [self postToFacebook];
+
 }
 
 // Post on the user's wall
@@ -346,35 +369,22 @@
 }
 
 
-- (void) afficherFacebookLogo
+- (void) updateFacebookLogo
 {
     sharethissongAppDelegate *appDelegate = (sharethissongAppDelegate *)[[UIApplication sharedApplication] delegate];
     Facebook *theFacebook = [appDelegate facebook];
 
     if ([theFacebook isSessionValid])
         {
-        // Enlever le bouton facebook
-            
-        NSLog(@"afficherFacebookLogo");
-        UIButton *facebookLogoButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        facebookLogoButton.frame = CGRectMake(18, 412, 20, 20);
-        UIImage *facebookLogoImage = [UIImage imageNamed:@"facebook-little.png"];
-        [facebookLogoButton setBackgroundImage:facebookLogoImage forState:UIControlStateNormal];
-        
-        [facebookLogoButton addTarget:self action:@selector(facebookAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:facebookLogoButton];
+        facebookButton.layer.borderColor = [UIColor greenColor].CGColor;
+        facebookButton.alpha = 1.0;
+        [shareButton setHidden:NO];
         }
     else
         {
-        NSLog(@"afficherFacebookConnect");
-        UIButton *facebookConnectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        facebookConnectButton.frame = CGRectMake(18, 412, 100, 20);
-        UIImage *facebookConnectImage = [UIImage imageNamed:@"facebook-connect.png"];
-        [facebookConnectButton setBackgroundImage:facebookConnectImage forState:UIControlStateNormal];
-        
-        [facebookConnectButton addTarget:self action:@selector(facebookAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:facebookConnectButton];
-
+        facebookButton.layer.borderColor = [UIColor redColor].CGColor;
+        facebookButton.alpha = 0.5;
+        [shareButton setHidden:YES];
         }
 }
 
@@ -413,7 +423,14 @@
 	else {
         NSLog(@"user pressed OK");
         [theFacebook logout:appDelegate];
+        [self updateFacebookLogo];
 	}
+}
+
+-(void)refreshView:(NSNotification *) notification
+{
+    [self updateFacebookLogo];
+
 }
 
 @end

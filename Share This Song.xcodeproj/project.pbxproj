@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		01108525145EA4DD00888F86 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01108524145EA4DD00888F86 /* MediaPlayer.framework */; };
-		017CD8F51465B808006832C8 /* sharethissongAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 017CD8F71465B808006832C8 /* sharethissongAppDelegate.m */; };
 		017CD8F91465B862006832C8 /* sharethissongMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017CD8FA1465B862006832C8 /* sharethissongMainViewController.m */; };
 		017CD8FD1465BA7A006832C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 017CD8FF1465BA7A006832C8 /* Localizable.strings */; };
 		017CD90D1465D179006832C8 /* air-leather-iphone4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 017CD9061465D179006832C8 /* air-leather-iphone4.jpg */; };
 		017CD90E1465D179006832C8 /* ego_bg_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 017CD9071465D179006832C8 /* ego_bg_ipad.png */; };
 		017CD90F1465D179006832C8 /* ego_bg_iphone4.png in Resources */ = {isa = PBXBuildFile; fileRef = 017CD9081465D179006832C8 /* ego_bg_iphone4.png */; };
-		017CD9101465D179006832C8 /* facebookLogOutButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 017CD9091465D179006832C8 /* facebookLogOutButton.png */; };
 		017CD9111465D179006832C8 /* Grey Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 017CD90A1465D179006832C8 /* Grey Button.png */; };
 		017CD9121465D179006832C8 /* Leather-Background-iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 017CD90B1465D179006832C8 /* Leather-Background-iPad.jpg */; };
 		017CD9131465D179006832C8 /* noArtworkImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 017CD90C1465D179006832C8 /* noArtworkImage.png */; };
@@ -29,8 +27,6 @@
 		01AA6320145D91D300113B4B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AA631F145D91D300113B4B /* SenTestingKit.framework */; };
 		01AA6321145D91D300113B4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AA62FB145D91D200113B4B /* UIKit.framework */; };
 		01AA6322145D91D300113B4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AA62FD145D91D200113B4B /* Foundation.framework */; };
-		01AA632A145D91D300113B4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01AA6328145D91D300113B4B /* InfoPlist.strings */; };
-		01AA632D145D91D300113B4B /* Share_This_SongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA632C145D91D300113B4B /* Share_This_SongTests.m */; };
 		01AA6356145D9B0D00113B4B /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA633B145D9B0D00113B4B /* Facebook.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01AA6357145D9B0D00113B4B /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 01AA633E145D9B0D00113B4B /* FBDialog.bundle */; };
 		01AA6358145D9B0D00113B4B /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA6340145D9B0D00113B4B /* FBDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -61,7 +57,8 @@
 		01BBC006145F4CBD00458E7D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBC005145F4CBD00458E7D /* SystemConfiguration.framework */; };
 		01BBC008145F4CC700458E7D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBC007145F4CC700458E7D /* MobileCoreServices.framework */; };
 		01BBC00A145F4CF100458E7D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BBC009145F4CF100458E7D /* libz.dylib */; };
-		01DB60931466953E0029525C /* facebook-little.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DB60921466953D0029525C /* facebook-little.png */; };
+		01FB80CB1468471B009A687E /* sharethissongAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB80CC1468471B009A687E /* sharethissongAppDelegate.m */; };
+		01FB80CF1468530B009A687E /* facebook8.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB80CE1468530B009A687E /* facebook8.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,14 +73,12 @@
 
 /* Begin PBXFileReference section */
 		01108524145EA4DD00888F86 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		017CD8F61465B808006832C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = en; path = en.lproj/sharethissongAppDelegate.m; sourceTree = "<group>"; };
 		017CD8FA1465B862006832C8 /* sharethissongMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sharethissongMainViewController.m; sourceTree = "<group>"; };
 		017CD8FE1465BA7A006832C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		017CD9001465BA82006832C8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		017CD9061465D179006832C8 /* air-leather-iphone4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "air-leather-iphone4.jpg"; sourceTree = "<group>"; };
 		017CD9071465D179006832C8 /* ego_bg_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ego_bg_ipad.png; sourceTree = "<group>"; };
 		017CD9081465D179006832C8 /* ego_bg_iphone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ego_bg_iphone4.png; sourceTree = "<group>"; };
-		017CD9091465D179006832C8 /* facebookLogOutButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLogOutButton.png; sourceTree = "<group>"; };
 		017CD90A1465D179006832C8 /* Grey Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grey Button.png"; sourceTree = "<group>"; };
 		017CD90B1465D179006832C8 /* Leather-Background-iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Leather-Background-iPad.jpg"; sourceTree = "<group>"; };
 		017CD90C1465D179006832C8 /* noArtworkImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noArtworkImage.png; sourceTree = "<group>"; };
@@ -103,10 +98,6 @@
 		01AA6317145D91D200113B4B /* sharethissongFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sharethissongFlipsideViewController.m; sourceTree = "<group>"; };
 		01AA631E145D91D300113B4B /* Share This SongTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Share This SongTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AA631F145D91D300113B4B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		01AA6327145D91D300113B4B /* Share This SongTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Share This SongTests-Info.plist"; sourceTree = "<group>"; };
-		01AA6329145D91D300113B4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		01AA632B145D91D300113B4B /* Share_This_SongTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Share_This_SongTests.h; sourceTree = "<group>"; };
-		01AA632C145D91D300113B4B /* Share_This_SongTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Share_This_SongTests.m; sourceTree = "<group>"; };
 		01AA633A145D9B0D00113B4B /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		01AA633B145D9B0D00113B4B /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
 		01AA633D145D9B0D00113B4B /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
@@ -162,7 +153,8 @@
 		01BBC005145F4CBD00458E7D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		01BBC007145F4CC700458E7D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		01BBC009145F4CF100458E7D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		01DB60921466953D0029525C /* facebook-little.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-little.png"; sourceTree = "<group>"; };
+		01FB80CC1468471B009A687E /* sharethissongAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sharethissongAppDelegate.m; sourceTree = "<group>"; };
+		01FB80CE1468530B009A687E /* facebook8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook8.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,12 +190,11 @@
 		017CD9051465D179006832C8 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				01DB60921466953D0029525C /* facebook-little.png */,
+				01FB80CE1468530B009A687E /* facebook8.png */,
 				01ADA2FA1465ED7600C59515 /* facebook-connect.png */,
 				017CD9061465D179006832C8 /* air-leather-iphone4.jpg */,
 				017CD9071465D179006832C8 /* ego_bg_ipad.png */,
 				017CD9081465D179006832C8 /* ego_bg_iphone4.png */,
-				017CD9091465D179006832C8 /* facebookLogOutButton.png */,
 				017CD90A1465D179006832C8 /* Grey Button.png */,
 				017CD90B1465D179006832C8 /* Leather-Background-iPad.jpg */,
 				017CD90C1465D179006832C8 /* noArtworkImage.png */,
@@ -221,7 +212,6 @@
 				01BBC003145F4CA800458E7D /* CFNetwork.framework */,
 				01108524145EA4DD00888F86 /* MediaPlayer.framework */,
 				01AA6301145D91D200113B4B /* Share This Song */,
-				01AA6325145D91D300113B4B /* Share This SongTests */,
 				01AA62FA145D91D200113B4B /* Frameworks */,
 				01AA62F8145D91D200113B4B /* Products */,
 			);
@@ -255,7 +245,7 @@
 				01BBBF7F145F480F00458E7D /* Classes */,
 				01BBBFD2145F480F00458E7D /* External */,
 				01AA630A145D91D200113B4B /* sharethissongAppDelegate.h */,
-				017CD8F71465B808006832C8 /* sharethissongAppDelegate.m */,
+				01FB80CC1468471B009A687E /* sharethissongAppDelegate.m */,
 				01AA630D145D91D200113B4B /* MainStoryboard_iPhone.storyboard */,
 				01AA6310145D91D200113B4B /* MainStoryboard_iPad.storyboard */,
 				01AA6313145D91D200113B4B /* sharethissongMainViewController.h */,
@@ -275,25 +265,6 @@
 				01AA6304145D91D200113B4B /* InfoPlist.strings */,
 				01AA6307145D91D200113B4B /* main.m */,
 				01AA6309145D91D200113B4B /* Share This Song-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		01AA6325145D91D300113B4B /* Share This SongTests */ = {
-			isa = PBXGroup;
-			children = (
-				01AA632B145D91D300113B4B /* Share_This_SongTests.h */,
-				01AA632C145D91D300113B4B /* Share_This_SongTests.m */,
-				01AA6326145D91D300113B4B /* Supporting Files */,
-			);
-			path = "Share This SongTests";
-			sourceTree = "<group>";
-		};
-		01AA6326145D91D300113B4B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				01AA6327145D91D300113B4B /* Share This SongTests-Info.plist */,
-				01AA6328145D91D300113B4B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -488,12 +459,11 @@
 				017CD90D1465D179006832C8 /* air-leather-iphone4.jpg in Resources */,
 				017CD90E1465D179006832C8 /* ego_bg_ipad.png in Resources */,
 				017CD90F1465D179006832C8 /* ego_bg_iphone4.png in Resources */,
-				017CD9101465D179006832C8 /* facebookLogOutButton.png in Resources */,
 				017CD9111465D179006832C8 /* Grey Button.png in Resources */,
 				017CD9121465D179006832C8 /* Leather-Background-iPad.jpg in Resources */,
 				017CD9131465D179006832C8 /* noArtworkImage.png in Resources */,
 				01ADA2FC1465ED7600C59515 /* facebook-connect.png in Resources */,
-				01DB60931466953E0029525C /* facebook-little.png in Resources */,
+				01FB80CF1468530B009A687E /* facebook8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +471,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01AA632A145D91D300113B4B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01AA6308145D91D200113B4B /* main.m in Sources */,
-				017CD8F51465B808006832C8 /* sharethissongAppDelegate.m in Sources */,
+				01FB80CB1468471B009A687E /* sharethissongAppDelegate.m in Sources */,
 				017CD8F91465B862006832C8 /* sharethissongMainViewController.m in Sources */,
 				01AA6318145D91D200113B4B /* sharethissongFlipsideViewController.m in Sources */,
 				01AA6356145D9B0D00113B4B /* Facebook.m in Sources */,
@@ -558,7 +527,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01AA632D145D91D300113B4B /* Share_This_SongTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,14 +541,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		017CD8F71465B808006832C8 /* sharethissongAppDelegate.m */ = {
-			isa = PBXVariantGroup;
-			children = (
-				017CD8F61465B808006832C8 /* en */,
-			);
-			name = sharethissongAppDelegate.m;
-			sourceTree = "<group>";
-		};
 		017CD8FF1465BA7A006832C8 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -612,14 +572,6 @@
 				01AA6311145D91D200113B4B /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		01AA6328145D91D300113B4B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				01AA6329145D91D300113B4B /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

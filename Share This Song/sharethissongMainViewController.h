@@ -12,6 +12,10 @@
 #import "JSON.h"
 #import <QuartzCore/QuartzCore.h>
 
+
+@class MainViewController;
+
+
 @interface sharethissongMainViewController : UIViewController <sharethissongFlipsideViewControllerDelegate, 
                                                                 UIPopoverControllerDelegate,
                                                                 ASIHTTPRequestDelegate>
@@ -23,6 +27,8 @@
     IBOutlet UILabel *Albumlabel;
         
     IBOutlet UIButton *shareButton;    
+    IBOutlet UIButton *facebookButton;    
+
     MPMusicPlayerController *musicPlayer;
     
     NSString *artworkURL;
@@ -40,19 +46,21 @@
 @property (nonatomic, retain) UILabel *Albumlabel;
 @property (nonatomic, retain) UIImageView *artworkImageView;
 
-
 @property (nonatomic, retain) UIButton *shareButton;
-
+@property (nonatomic, retain) UIButton *facebookButton;
 
 
 
 - (IBAction)sharingRequest:(id)sender;
+- (IBAction)facebookAction:(id)sender;
+
 
 - (void) registerMediaPlayerNotifications;
 - (void) updateSongPlayed;
 - (void) searchImages;
 - (void) postToFacebook;
-- (void) afficherFacebookLogo;
+- (void) updateFacebookLogo;
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 @end

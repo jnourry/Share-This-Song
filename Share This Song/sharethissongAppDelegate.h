@@ -11,7 +11,9 @@
 #import "Reachability.h"
 
 
-@interface sharethissongAppDelegate : UIResponder <UIApplicationDelegate, FBSessionDelegate, FBRequestDelegate>
+@interface sharethissongAppDelegate : UIResponder <UIApplicationDelegate, 
+                                                    FBSessionDelegate,
+                                                    FBRequestDelegate>
     {
     Facebook *facebook;    // Facebook
     }
