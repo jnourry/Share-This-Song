@@ -12,6 +12,12 @@
 #import "JSON.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define kiPhoneWidth 320
+#define kiPhoneHeight 480
+
+#define kiPadWidth 640
+#define kiPadHeight 960
+
 
 @class MainViewController;
 
@@ -34,7 +40,10 @@
     
     NSString *artworkURL;
     NSString *iTunesSongURL;
-
+        
+    UILabel *tempLabel;
+        
+    NSTimer *timer;
 
     }
 

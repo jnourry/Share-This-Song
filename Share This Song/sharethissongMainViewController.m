@@ -64,11 +64,41 @@
     musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
     [self registerMediaPlayerNotifications];
     
+    // Display alert “message posted to Facebook” but hidden
+    tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+    tempLabel.numberOfLines = 0;   //To allow line breaks :)
+    
+    [tempLabel setText:NSLocalizedString(@"Message posted to Facebook",@"")];
+
+    CGSize labelSize = [tempLabel.text sizeWithFont:tempLabel.font
+                              constrainedToSize:tempLabel.frame.size
+                                  lineBreakMode:tempLabel.lineBreakMode];
+    tempLabel.frame = CGRectMake(
+                             tempLabel.frame.origin.x, tempLabel.frame.origin.y, 
+                             tempLabel.frame.size.width, labelSize.height);
+    [tempLabel setTextAlignment:UITextAlignmentCenter];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+        [tempLabel setCenter:CGPointMake(kiPhoneWidth/2.0, kiPhoneHeight/2.0)];
+    else
+        [tempLabel setCenter:CGPointMake(kiPadWidth/2.0, kiPadHeight/2.0)];
+    
+    tempLabel.backgroundColor = [UIColor colorWithWhite:0.25 alpha:1.0];
+    tempLabel.textColor = [UIColor whiteColor];
+    tempLabel.layer.borderColor = [[UIColor whiteColor] CGColor];
+    tempLabel.layer.borderWidth = 1.5;
+    tempLabel.layer.cornerRadius = 6.0;
+    
+    [self.view addSubview:tempLabel];
+    tempLabel.alpha = 0.0f;
+    
     [self updateSongPlayed];
     
     [self updateFacebookLogo];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"refreshView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshFBbutton:) name:@"refreshFBbutton" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(FBrequestDidLoad:) name:@"FBrequestDidLoad" object:nil];
 
 
 }
@@ -82,7 +112,10 @@
                                                     name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification
                                                   object: musicPlayer];
     [[NSNotificationCenter defaultCenter] removeObserver: self
-                                                    name: @"refreshView"
+                                                    name: @"refreshFBbutton"
+                                                  object: nil];
+    [[NSNotificationCenter defaultCenter] removeObserver: self
+                                                    name: @"FBrequestDidLoad"
                                                   object: nil];
     [musicPlayer endGeneratingPlaybackNotifications];
 }
@@ -197,6 +230,8 @@
 
 - (void) updateSongPlayed
 {
+    artworkImageView.layer.borderColor = [UIColor redColor].CGColor;
+
     MPMediaItem *currentItem = [musicPlayer nowPlayingItem];
     UIImage *artworkImage = [UIImage imageNamed:@"noArtworkImage.png"];
     MPMediaItemArtwork *artwork = [currentItem valueForProperty: MPMediaItemPropertyArtwork];
@@ -432,10 +467,34 @@
 	}
 }
 
--(void)refreshView:(NSNotification *) notification
+-(void)refreshFBbutton:(NSNotification *) notification
 {
     [self updateFacebookLogo];
 
+}
+
+-(void)FBrequestDidLoad:(NSNotification *) notification
+{    
+    NSLog(@"FBrequestDidLoad");
+
+    // Changer la couleur du bord de l’image en vert:
+    artworkImageView.layer.borderColor = [UIColor greenColor].CGColor;
+
+    tempLabel.hidden = FALSE;
+    tempLabel.alpha = 1.0f;
+    timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(fadeMessage) userInfo:nil repeats:NO];
+    
+}
+
+-(void)fadeMessage
+{
+    // Remove label with fade out
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:2.0f]; 
+    // Remove label
+    tempLabel.alpha = 0.0f;
+    
+    [UIView commitAnimations];
 }
 
 @end

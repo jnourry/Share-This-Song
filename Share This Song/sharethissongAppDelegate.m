@@ -97,24 +97,23 @@
     [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
     
-    /*UIViewController mainViewController = self.nextResponder.inputView;
-    [self.nextResponder.inputView updateFacebookLogo];
-    [self.window.rootViewController    updateFacebookLogo];
-     */
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshFBbutton" object:nil];
 
 }
 
 - (void)fbDidNotLogin:(BOOL)cancelled
 {
     NSLog(@"fbDidNotLogin");
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshFBbutton" object:nil];
 
 }
 
 - (void)request:(FBRequest *)request didLoad:(id)result
 {
     NSLog(@"didLoad");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"FBrequestDidLoad" object:nil];
+
 }
 
 - (void)request:(FBRequest *)request didFailWithError:(NSError *)error
