@@ -75,7 +75,7 @@
                                   lineBreakMode:tempLabel.lineBreakMode];
     tempLabel.frame = CGRectMake(
                              tempLabel.frame.origin.x, tempLabel.frame.origin.y, 
-                             tempLabel.frame.size.width, labelSize.height);
+                             1.3 * tempLabel.frame.size.width, 1.3 * labelSize.height);
     [tempLabel setTextAlignment:UITextAlignmentCenter];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
@@ -83,9 +83,9 @@
     else
         [tempLabel setCenter:CGPointMake(kiPadWidth/2.0, kiPadHeight/2.0)];
     
-    tempLabel.backgroundColor = [UIColor colorWithWhite:0.25 alpha:1.0];
+    tempLabel.backgroundColor = [UIColor colorWithWhite:0.20 alpha:1.0];
     tempLabel.textColor = [UIColor whiteColor];
-    tempLabel.layer.borderColor = [[UIColor whiteColor] CGColor];
+    tempLabel.layer.borderColor = [[UIColor grayColor] CGColor];
     tempLabel.layer.borderWidth = 1.5;
     tempLabel.layer.cornerRadius = 6.0;
     
@@ -99,8 +99,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshFBbutton:) name:@"refreshFBbutton" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(FBrequestDidLoad:) name:@"FBrequestDidLoad" object:nil];
-
-
+    
 }
 
 - (void)viewDidUnload
@@ -477,11 +476,15 @@
 {    
     NSLog(@"FBrequestDidLoad");
 
-    // Changer la couleur du bord de l’image en vert:
-    artworkImageView.layer.borderColor = [UIColor greenColor].CGColor;
-
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1.0f]; 
     tempLabel.hidden = FALSE;
     tempLabel.alpha = 1.0f;
+    
+    tempLabel.transform = CGAffineTransformMakeScale(1.1, 1.1); //grow
+    [UIView commitAnimations];
+    
+    // Will fade the message label in 3 seconds
     timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(fadeMessage) userInfo:nil repeats:NO];
     
 }
@@ -493,7 +496,10 @@
     [UIView setAnimationDuration:2.0f]; 
     // Remove label
     tempLabel.alpha = 0.0f;
-    
+    tempLabel.transform = CGAffineTransformMakeScale(1.0, 1.0); //normal
+
+    // Changer la couleur du bord de l’image en vert:
+    artworkImageView.layer.borderColor = [UIColor greenColor].CGColor;
     [UIView commitAnimations];
 }
 
