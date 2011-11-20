@@ -15,8 +15,8 @@
 #define kiPhoneWidth 320
 #define kiPhoneHeight 480
 
-#define kiPadWidth 640
-#define kiPadHeight 960
+#define kiPadWidth 768
+#define kiPadHeight 1024
 
 
 @class MainViewController;

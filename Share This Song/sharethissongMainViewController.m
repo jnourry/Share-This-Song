@@ -81,7 +81,7 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
         [tempLabel setCenter:CGPointMake(kiPhoneWidth/2.0, kiPhoneHeight/2.0)];
     else
-        [tempLabel setCenter:CGPointMake(kiPadWidth/2.0, kiPadHeight/2.0)];
+        [tempLabel setCenter:CGPointMake(kiPadHeight/2.0, kiPadWidth/2.0)];
     
     tempLabel.backgroundColor = [UIColor colorWithWhite:0.20 alpha:1.0];
     tempLabel.textColor = [UIColor whiteColor];
@@ -99,7 +99,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshFBbutton:) name:@"refreshFBbutton" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(FBrequestDidLoad:) name:@"FBrequestDidLoad" object:nil];
-    
+
 }
 
 - (void)viewDidUnload
