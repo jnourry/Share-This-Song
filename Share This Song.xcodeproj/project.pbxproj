@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		01108525145EA4DD00888F86 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01108524145EA4DD00888F86 /* MediaPlayer.framework */; };
+		01536A12148167D30070500E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01536A11148167D30070500E /* Icon.png */; };
+		01536A14148167D70070500E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01536A13148167D70070500E /* Icon@2x.png */; };
+		01536A16148167DB0070500E /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 01536A15148167DB0070500E /* Icon-72.png */; };
 		017CD8F91465B862006832C8 /* sharethissongMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017CD8FA1465B862006832C8 /* sharethissongMainViewController.m */; };
 		017CD8FD1465BA7A006832C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 017CD8FF1465BA7A006832C8 /* Localizable.strings */; };
 		017CD90D1465D179006832C8 /* air-leather-iphone4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 017CD9061465D179006832C8 /* air-leather-iphone4.jpg */; };
@@ -16,9 +19,6 @@
 		017CD9111465D179006832C8 /* Grey Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 017CD90A1465D179006832C8 /* Grey Button.png */; };
 		017CD9121465D179006832C8 /* Leather-Background-iPad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 017CD90B1465D179006832C8 /* Leather-Background-iPad.jpg */; };
 		017CD9131465D179006832C8 /* noArtworkImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 017CD90C1465D179006832C8 /* noArtworkImage.png */; };
-		01A324481477D1880072D1BE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01A324471477D1880072D1BE /* Icon.png */; };
-		01A3244A1477D1980072D1BE /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01A324491477D1980072D1BE /* Icon@2x.png */; };
-		01A3244C1477D1A50072D1BE /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 01A3244B1477D1A50072D1BE /* Icon-72.png */; };
 		01AA62FC145D91D200113B4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AA62FB145D91D200113B4B /* UIKit.framework */; };
 		01AA62FE145D91D200113B4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AA62FD145D91D200113B4B /* Foundation.framework */; };
 		01AA6300145D91D200113B4B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AA62FF145D91D200113B4B /* CoreGraphics.framework */; };
@@ -76,6 +76,9 @@
 
 /* Begin PBXFileReference section */
 		01108524145EA4DD00888F86 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		01536A11148167D30070500E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		01536A13148167D70070500E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		01536A15148167DB0070500E /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		017CD8FA1465B862006832C8 /* sharethissongMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sharethissongMainViewController.m; sourceTree = "<group>"; };
 		017CD8FE1465BA7A006832C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		017CD9001465BA82006832C8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -85,9 +88,6 @@
 		017CD90A1465D179006832C8 /* Grey Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grey Button.png"; sourceTree = "<group>"; };
 		017CD90B1465D179006832C8 /* Leather-Background-iPad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Leather-Background-iPad.jpg"; sourceTree = "<group>"; };
 		017CD90C1465D179006832C8 /* noArtworkImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noArtworkImage.png; sourceTree = "<group>"; };
-		01A324471477D1880072D1BE /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		01A324491477D1980072D1BE /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		01A3244B1477D1A50072D1BE /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		01AA62F7145D91D200113B4B /* Share This Song.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Share This Song.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AA62FB145D91D200113B4B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		01AA62FD145D91D200113B4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -211,9 +211,9 @@
 		01AA62EC145D91D200113B4B = {
 			isa = PBXGroup;
 			children = (
-				01A3244B1477D1A50072D1BE /* Icon-72.png */,
-				01A324491477D1980072D1BE /* Icon@2x.png */,
-				01A324471477D1880072D1BE /* Icon.png */,
+				01536A15148167DB0070500E /* Icon-72.png */,
+				01536A13148167D70070500E /* Icon@2x.png */,
+				01536A11148167D30070500E /* Icon.png */,
 				01ADA2FE1465F09E00C59515 /* QuartzCore.framework */,
 				01BBC009145F4CF100458E7D /* libz.dylib */,
 				01BBC007145F4CC700458E7D /* MobileCoreServices.framework */,
@@ -473,9 +473,9 @@
 				017CD9131465D179006832C8 /* noArtworkImage.png in Resources */,
 				01ADA2FC1465ED7600C59515 /* facebook-connect.png in Resources */,
 				01FB80CF1468530B009A687E /* facebook8.png in Resources */,
-				01A324481477D1880072D1BE /* Icon.png in Resources */,
-				01A3244A1477D1980072D1BE /* Icon@2x.png in Resources */,
-				01A3244C1477D1A50072D1BE /* Icon-72.png in Resources */,
+				01536A12148167D30070500E /* Icon.png in Resources */,
+				01536A14148167D70070500E /* Icon@2x.png in Resources */,
+				01536A16148167DB0070500E /* Icon-72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
