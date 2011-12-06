@@ -58,7 +58,7 @@
     // Modification du bouton Facebook
     facebookButton.layer.masksToBounds = YES;
     facebookButton.layer.cornerRadius = 15.0;
-    facebookButton.layer.borderWidth = 1.0;
+    facebookButton.layer.borderWidth = 1.5;
     
     // La partie player
     musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
@@ -383,7 +383,7 @@
     if (artworkURL == @"")
         {
         artworkURL = @"http://www.kedwards.com/KavaTunes/itunes/images/no_artwork.gif";
-        iTunesSongURL = @" ";
+        iTunesSongURL = @"http://www.itunes.com";
         }
     
     params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
