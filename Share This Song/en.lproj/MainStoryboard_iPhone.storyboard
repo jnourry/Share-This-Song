@@ -239,7 +239,7 @@ You can use the Facebook button to log in or out.</string>
                         <outlet property="monTextView" destination="lnz-ES-kru" id="6pI-4o-kQD"/>
                         <outlet property="searchiTunesArtworkLabel" destination="Y5c-BP-cfl" id="1F6-t0-al9"/>
                         <outlet property="searchiTunesArtworkSwitch" destination="Ycb-mN-arq" id="sYg-YX-7N3"/>
-                        <outlet property="settingsLabel" destination="rd2-JR-Ag3" id="w5u-3f-GUV"/>
+                        <outlet property="settingsLabel" destination="rd2-JR-Ag3" id="1yV-dn-aaZ"/>
                     </connections>
                 </viewController>
             </objects>
@@ -256,6 +256,7 @@ You can use the Facebook button to log in or out.</string>
             <source key="sourceIdentifier" type="project" relativePath="./Classes/sharethissongFlipsideViewController.h"/>
             <relationships>
                 <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="switchValueChanged"/>
                 <relationship kind="outlet" name="delegate"/>
                 <relationship kind="outlet" name="instructionsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="monLabel" candidateClass="UILabel"/>
