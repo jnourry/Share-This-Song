@@ -146,6 +146,20 @@
                                 <rect key="frame" x="-2" y="1" width="326" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ebS-tS-1QC">
+                                <rect key="frame" x="20" y="109" width="280" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="12">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -160,28 +174,35 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Made by J. NOURRY" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="L7g-sP-pPc">
-                                <rect key="frame" x="79" y="393" width="162" height="21"/>
+                                <rect key="frame" x="79" y="413" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2011" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="v6H-mf-I6y">
-                                <rect key="frame" x="136" y="414" width="51" height="21"/>
+                                <rect key="frame" x="136" y="429" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Instructions :" lineBreakMode="tailTruncation" minimumFontSize="10" id="rXg-ml-nOz">
-                                <rect key="frame" x="20" y="117" width="99" height="21"/>
+                                <rect key="frame" x="20" y="184" width="99" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.29052312369145628" green="0.62269893270623056" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Settings :" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="rd2-JR-Ag3" userLabel="settings-label">
+                                <rect key="frame" x="20" y="74" width="110" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.2905231237" green="0.62269893269999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" id="lnz-ES-kru">
-                                <rect key="frame" x="31" y="155" width="259" height="180"/>
+                                <rect key="frame" x="20" y="213" width="280" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="0.19" colorSpace="calibratedWhite"/>
                                 <string key="text">Tap the ‘Share’ button to post the track currently playing on iPod app on your FB wall.
@@ -191,6 +212,20 @@ You can use the Facebook button to log in or out.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Ycb-mN-arq" userLabel="iTunes artwork search switch">
+                                <rect key="frame" x="31" y="119" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchValueChanged" destination="6" eventType="valueChanged" id="icd-0Z-6WX"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Search for iTunes artwork" lineBreakMode="tailTruncation" minimumFontSize="10" id="Y5c-BP-cfl" userLabel="search-iTunes-label">
+                                <rect key="frame" x="126" y="122" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration">
@@ -202,6 +237,9 @@ You can use the Facebook button to log in or out.</string>
                         <outlet property="instructionsLabel" destination="rXg-ml-nOz" id="I6i-pn-CnY"/>
                         <outlet property="monLabel" destination="L7g-sP-pPc" id="ygw-kw-xSl"/>
                         <outlet property="monTextView" destination="lnz-ES-kru" id="6pI-4o-kQD"/>
+                        <outlet property="searchiTunesArtworkLabel" destination="Y5c-BP-cfl" id="1F6-t0-al9"/>
+                        <outlet property="searchiTunesArtworkSwitch" destination="Ycb-mN-arq" id="sYg-YX-7N3"/>
+                        <outlet property="settingsLabel" destination="rd2-JR-Ag3" id="w5u-3f-GUV"/>
                     </connections>
                 </viewController>
             </objects>
@@ -222,6 +260,9 @@ You can use the Facebook button to log in or out.</string>
                 <relationship kind="outlet" name="instructionsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="monLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="monTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="searchiTunesArtworkLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="searchiTunesArtworkSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="settingsLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="sharethissongMainViewController" superclassName="UIViewController">

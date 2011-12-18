@@ -271,9 +271,18 @@
 
 - (IBAction)sharingRequest:(id)sender;
 {
+    // Get user preferences
+	NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
     
-    [self searchImages];
-    
+    BOOL artworkSetting = [userPrefs boolForKey:@"artwork_setting"];
+
+    // if the user wants the app to search for iTunes artwork
+    // if not, we post directly :)
+    if (artworkSetting)
+        [self searchImages];
+    else
+        [self postToFacebook];
+
 }
 
 - (void)searchImages

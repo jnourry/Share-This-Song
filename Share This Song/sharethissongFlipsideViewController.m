@@ -13,7 +13,11 @@
 @synthesize delegate = delegate;
 @synthesize monLabel;
 @synthesize instructionsLabel;
+@synthesize searchiTunesArtworkLabel;
+@synthesize searchiTunesArtworkSwitch;
 @synthesize monTextView;
+@synthesize settingsLabel;
+
 
 - (void)awakeFromNib
 {
@@ -43,7 +47,19 @@
     [monTextView.layer setMasksToBounds:YES];
     monTextView.layer.cornerRadius = 9.0;
 
+    searchiTunesArtworkLabel.text = NSLocalizedString(@"Search for iTunes artwork", @"");
+    settingsLabel.text = NSLocalizedString(@"Settings :", @"");
 
+    
+    // Get switch value in user preferences
+	NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+    BOOL artworkSetting = [userPrefs boolForKey:@"artwork_setting"];
+
+	if (artworkSetting) 
+		[searchiTunesArtworkSwitch setOn:YES animated:NO];
+    else
+		[searchiTunesArtworkSwitch setOn:NO animated:NO];
+	
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -109,6 +125,14 @@
 {
     NSLog(@"done %@",sender);
     [self.delegate flipsideViewControllerDidFinish:self];
+}
+
+-(IBAction) switchValueChanged
+{
+    NSLog(@"switchValueChanged");
+    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+	[userPrefs setBool:searchiTunesArtworkSwitch.on forKey:@"artwork_setting"];
+	[userPrefs synchronize];
 }
 
 @end
