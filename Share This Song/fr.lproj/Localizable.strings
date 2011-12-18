@@ -41,3 +41,15 @@
 "instructions text" = "Par un simple appui sur le bouton 'Partager', vous pouvez poster la chanson que vous écoutez actuellement sur votre mur Facebook. \n\nVous pouvez vous connecter/déconnecter à l’aide du bouton Facebook.";
 
 "Message posted to Facebook" = "Message posté sur Facebook";
+
+// Nouveaux messages pour affichage de la progression
+"FB request did load" = "chargement Facebook OK";
+
+"searching for iTunes artwork" = "recherche de l'artwork sur iTunes";
+
+"iTunes artwork found" = "artwork iTunes trouvé";
+
+"posting to Facebook" = "requête FB initiée";
+
+"iTunes request failed" = "pas d'artwork iTunes trouvé";
+

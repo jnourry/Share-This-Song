@@ -22,6 +22,7 @@
 @synthesize Artistlabel;        
 @synthesize Albumlabel;
 @synthesize fbOnOfflabel;
+@synthesize progressionlabel;
 @synthesize shareButton; 
 @synthesize facebookButton; 
 @synthesize artworkImageView;
@@ -277,6 +278,8 @@
 
 - (void)searchImages
 {
+    progressionlabel.text = [NSString stringWithFormat:NSLocalizedString(@"searching for iTunes artwork",@"")];
+    
     // On récupère d'abord le code pays
     NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
     
@@ -323,6 +326,8 @@
 // We have the response from iTunes
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
+    progressionlabel.text = [NSString stringWithFormat:NSLocalizedString(@"iTunes artwork found",@"")];
+
     // Use when fetching text data
     NSString *theJSONresponseString = [request responseString];
     
@@ -344,7 +349,7 @@
 
     NSLog(@"artworkURL : %@",artworkURL);
     NSLog(@"iTunesSongURL : %@",iTunesSongURL);
-   
+    
     [self postToFacebook];
 }
 
@@ -362,6 +367,8 @@
     NSLog(@"ASIHTTP failed : %@", [error localizedDescription]);
     NSLog(@"Err details    : %@", [error description]);
 
+    progressionlabel.text = [NSString stringWithFormat:NSLocalizedString(@"iTunes request failed",@"")];
+    
     // We still post to Facebook, but there won't be any artwork link
     [self postToFacebook];
 
@@ -370,6 +377,8 @@
 // Post on the user's wall
 - (void)postToFacebook
 {
+    progressionlabel.text = [NSString stringWithFormat:NSLocalizedString(@"posting to Facebook",@"")];
+
     NSString *messageShareThisSong = [NSString stringWithFormat:NSLocalizedString(@"listens to %@%@%@%@%@",@""),
                                       Songlabel.text, 
                                       NSLocalizedString(@" from ",@""),
@@ -401,6 +410,7 @@
     Facebook *theFacebook = [appDelegate facebook];
     
     [theFacebook requestWithGraphPath:@"me/feed" andParams:params andHttpMethod:@"POST" andDelegate:appDelegate];
+
 }
 
 
@@ -475,6 +485,8 @@
 -(void)FBrequestDidLoad:(NSNotification *) notification
 {    
     NSLog(@"FBrequestDidLoad");
+    progressionlabel.text = [NSString stringWithFormat:NSLocalizedString(@"FB request did load",@"")];
+
 
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:1.0f]; 
@@ -500,6 +512,8 @@
 
     // Changer la couleur du bord de l’image en vert:
     artworkImageView.layer.borderColor = [UIColor greenColor].CGColor;
+    progressionlabel.text = @"";
+
     [UIView commitAnimations];
 }
 

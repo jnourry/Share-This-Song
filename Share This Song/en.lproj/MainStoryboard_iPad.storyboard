@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
+        <development version="4200" defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
     </dependencies>
     <scenes>
@@ -77,6 +77,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="m5T-sm-LNN" userLabel="progression">
+                                <rect key="frame" x="71" y="112" width="420" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EHl-9W-m9t" userLabel="Facebook button">
                                 <rect key="frame" x="497" y="69" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -117,6 +124,7 @@
                         <outlet property="artworkImageView" destination="3Fg-bI-gDV" id="4qm-Ps-JAN"/>
                         <outlet property="facebookButton" destination="EHl-9W-m9t" id="i8g-Ne-AQX"/>
                         <outlet property="fbOnOfflabel" destination="Kmh-b9-ehm" id="WfF-XH-VNk"/>
+                        <outlet property="progressionlabel" destination="m5T-sm-LNN" id="Fag-Vw-ui7"/>
                         <outlet property="shareButton" destination="U4K-vf-OFv" id="teB-29-9yX"/>
                         <segue destination="5" kind="popover" identifier="showAlternate" popoverAnchorBarButtonItem="15" id="22">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -225,6 +233,7 @@ You can use the Facebook button to log in or out.</string>
                 <relationship kind="outlet" name="artworkImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fbOnOfflabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="progressionlabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="shareButton" candidateClass="UIButton"/>
             </relationships>
         </class>
