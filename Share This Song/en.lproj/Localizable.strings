@@ -40,8 +40,10 @@
 
 "instructions text" = "Tap the 'Share' button to post the track currently playing on iPod app to your FB wall. \n\nYou can use the Facebook button to log in or out.";
 
+// Temporary message
 "Message posted to Facebook" = "Message posted to Facebook";
 
+"Message posted to Facebook\nwithout iTunes artwork" = "Message posted to Facebook\nwithout iTunes artwork";
 
 // New messages for progression label
 "FB request did load" = "FB request did load";

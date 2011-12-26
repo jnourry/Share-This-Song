@@ -42,10 +42,12 @@
 
 "Message posted to Facebook" = "Message posté sur Facebook";
 
+"Message posted to Facebook\nwithout iTunes artwork" = "Message posté sur Facebook\nsans la pochette iTunes";
+
 // Nouveaux messages pour affichage de la progression
 "FB request did load" = "chargement Facebook OK";
 
-"searching for iTunes artwork" = "recherche de l'artwork sur iTunes";
+"searching for iTunes artwork" = "recherche de la pochette sur iTunes";
 
 "iTunes artwork found" = "artwork iTunes trouvé";
 

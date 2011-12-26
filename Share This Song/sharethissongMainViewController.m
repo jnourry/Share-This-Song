@@ -69,20 +69,7 @@
     tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
     tempLabel.numberOfLines = 0;   //To allow line breaks :)
     
-    [tempLabel setText:NSLocalizedString(@"Message posted to Facebook",@"")];
-
-    CGSize labelSize = [tempLabel.text sizeWithFont:tempLabel.font
-                              constrainedToSize:tempLabel.frame.size
-                                  lineBreakMode:tempLabel.lineBreakMode];
-    tempLabel.frame = CGRectMake(
-                             tempLabel.frame.origin.x, tempLabel.frame.origin.y, 
-                             1.3 * tempLabel.frame.size.width, 1.3 * labelSize.height);
-    [tempLabel setTextAlignment:UITextAlignmentCenter];
-    
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-        [tempLabel setCenter:CGPointMake(kiPhoneWidth/2.0, kiPhoneHeight/2.0)];
-    else
-        [tempLabel setCenter:CGPointMake(kiPadHeight/2.0, kiPadWidth/2.0)];
+    [self changeMessageText:NSLocalizedString(@"Message posted to Facebook",@"")];
     
     tempLabel.backgroundColor = [UIColor colorWithWhite:0.20 alpha:1.0];
     tempLabel.textColor = [UIColor whiteColor];
@@ -279,9 +266,17 @@
     // if the user wants the app to search for iTunes artwork
     // if not, we post directly :)
     if (artworkSetting)
+        {
+        NSLog(@"Recherche avec Artwork");
         [self searchImages];
+        }
     else
+        {
+        NSLog(@"Recherche sans Artwork");
+        artworkURL = @"";
+        iTunesSongURL = @"";
         [self postToFacebook];
+        }
 
 }
 
@@ -496,7 +491,11 @@
     NSLog(@"FBrequestDidLoad");
     progressionlabel.text = [NSString stringWithFormat:NSLocalizedString(@"FB request did load",@"")];
 
-
+    if (iTunesSongURL != @"http://www.itunes.com")
+        [self changeMessageText:NSLocalizedString(@"Message posted to Facebook",@"")];
+    else
+        [self changeMessageText:NSLocalizedString(@"Message posted to Facebook\nwithout iTunes artwork",@"")];
+    
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:1.0f]; 
     tempLabel.hidden = FALSE;
@@ -519,11 +518,39 @@
     tempLabel.alpha = 0.0f;
     tempLabel.transform = CGAffineTransformMakeScale(1.0, 1.0); //normal
 
-    // Changer la couleur du bord de l’image en vert:
-    artworkImageView.layer.borderColor = [UIColor greenColor].CGColor;
+    // Changer la couleur du bord de l’image 
+    //  - en vert si la pochette est transmise
+    //  - en orange sinon
+    if (iTunesSongURL != @"http://www.itunes.com")
+        artworkImageView.layer.borderColor = [UIColor greenColor].CGColor;
+    else
+        artworkImageView.layer.borderColor = [UIColor orangeColor].CGColor;
+    
     progressionlabel.text = @"";
-
     [UIView commitAnimations];
 }
 
+-(void)changeMessageText:(NSString *)messageText
+{
+    [tempLabel setText:NSLocalizedString(messageText,@"")];
+    CGSize boundingSize;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+        boundingSize = CGSizeMake(kiPhoneWidth - 5, kiPhoneHeight - 5);
+    else
+        boundingSize = CGSizeMake(kiPadHeight - 5, kiPadWidth - 20);
+    
+    CGSize labelSize = [tempLabel.text sizeWithFont:tempLabel.font
+                                  constrainedToSize:boundingSize
+                                      lineBreakMode:tempLabel.lineBreakMode];
+    tempLabel.frame = CGRectMake(
+                                 tempLabel.frame.origin.x, tempLabel.frame.origin.y, 
+                                 1.3 * labelSize.width, 1.3 * labelSize.height);
+    [tempLabel setTextAlignment:UITextAlignmentCenter];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+        [tempLabel setCenter:CGPointMake(kiPhoneWidth/2.0, kiPhoneHeight/2.0)];
+    else
+        [tempLabel setCenter:CGPointMake(kiPadHeight/2.0, kiPadWidth/2.0)];
+    
+}
 @end

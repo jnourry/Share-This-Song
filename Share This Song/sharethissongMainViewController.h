@@ -74,6 +74,7 @@
 - (void) searchImages;
 - (void) postToFacebook;
 - (void) updateFacebookLogo;
+- (void) changeMessageText:(NSString *)messageText;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 
