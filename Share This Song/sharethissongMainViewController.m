@@ -87,7 +87,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshFBbutton:) name:@"refreshFBbutton" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(FBrequestDidLoad:) name:@"FBrequestDidLoad" object:nil];
-
 }
 
 - (void)viewDidUnload
@@ -533,18 +532,27 @@
 -(void)changeMessageText:(NSString *)messageText
 {
     [tempLabel setText:NSLocalizedString(messageText,@"")];
+    
+    // La taille max selon le type de iDevice
     CGSize boundingSize;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-        boundingSize = CGSizeMake(kiPhoneWidth - 5, kiPhoneHeight - 5);
+        boundingSize = CGSizeMake(250, 60);
     else
-        boundingSize = CGSizeMake(kiPadHeight - 5, kiPadWidth - 20);
+        boundingSize = CGSizeMake(350, 80);
     
+    
+    // Recoupe le cadre du label en function du texte
     CGSize labelSize = [tempLabel.text sizeWithFont:tempLabel.font
                                   constrainedToSize:boundingSize
                                       lineBreakMode:tempLabel.lineBreakMode];
+    
+    // Permet d’agrandir légèrement autour du texte (plus joli)
     tempLabel.frame = CGRectMake(
-                                 tempLabel.frame.origin.x, tempLabel.frame.origin.y, 
-                                 1.3 * labelSize.width, 1.3 * labelSize.height);
+                                 0,
+                                 0,
+                                 1.25 * labelSize.width, 
+                                 1.25 * labelSize.height);
+    
     [tempLabel setTextAlignment:UITextAlignmentCenter];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
