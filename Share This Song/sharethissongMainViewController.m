@@ -87,7 +87,20 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshFBbutton:) name:@"refreshFBbutton" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(FBrequestDidLoad:) name:@"FBrequestDidLoad" object:nil];
+    
+    // Get user preferences and set the switch on if it's the first run
+	NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+	if ([userPrefs boolForKey:@"first_run"] == 0)
+	{
+		// First run
+		[userPrefs setBool:1 forKey:@"first_run"];
+        [userPrefs setBool:1 forKey:@"artwork_setting"];
+		[userPrefs synchronize];
+	}
+    
 }
+
+
 
 - (void)viewDidUnload
 {
@@ -451,7 +464,7 @@
         {
             UIAlertView *alert = [[UIAlertView alloc]
                                   initWithTitle:NSLocalizedString(@"Logout from Facebook",@"")
-                                  message:NSLocalizedString(@"Do you really want to log out",@"")
+                                  message:NSLocalizedString(@"Do you really want to log out ?",@"")
                                   delegate:self 
                                   cancelButtonTitle:NSLocalizedString(@"Cancel",@"")
                                   otherButtonTitles:@"OK", nil]; 
@@ -474,7 +487,7 @@
 	}
 	else {
         NSLog(@"user pressed OK");
-        [theFacebook logout:appDelegate];
+        [theFacebook logout];
         [self updateFacebookLogo];
 	}
 }

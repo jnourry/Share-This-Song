@@ -101,6 +101,37 @@
 
 }
 
+
+/**
+ * Called when the session has expired.
+ */
+- (void)fbSessionInvalidated {  
+    NSLog(@"fbSessionInvalidated");
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"Auth Exception" 
+                              message:NSLocalizedString(@"Your session has expired.",@"") 
+                              delegate:nil 
+                              cancelButtonTitle:@"OK" 
+                              otherButtonTitles:nil, 
+                              nil];
+    [alertView show];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshFBbutton" object:nil];
+}
+
+/**
+ * Called when the request logout has succeeded.
+ */
+- (void)fbDidLogout {    
+    NSLog(@"fbDidLogout");
+
+    // Remove saved authorization information if it exists and it is
+    // ok to clear it (logout, session invalid, app unauthorized)
+    /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"FBAccessTokenKey"];
+    [defaults removeObjectForKey:@"FBExpirationDateKey"];
+    [defaults synchronize];*/
+}
+
 - (void)fbDidNotLogin:(BOOL)cancelled
 {
     NSLog(@"fbDidNotLogin");

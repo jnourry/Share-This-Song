@@ -32,7 +32,9 @@
 
 "Logout from Facebook" = "Logout from Facebook";
 
-"Do you really want to log out" = "Do you really want to log out";
+"Do you really want to log out ?" = "Do you really want to log out ?";
+
+"Your session has expired." = "Your session has expired.";
 
 "Cancel" = "Cancel";
 

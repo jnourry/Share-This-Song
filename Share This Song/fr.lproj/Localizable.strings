@@ -32,7 +32,9 @@
 
 "Logout from Facebook" = "Déconnexion de Facebook";
 
-"Do you really want to log out" = "Voulez vous vraiment vous déconnecter";
+"Do you really want to log out ?" = "Voulez vous vraiment vous déconnecter ?";
+
+"Your session has expired." = "Votre session a expiré.";
 
 "Cancel" = "Annuler";
 
