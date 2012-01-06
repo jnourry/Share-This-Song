@@ -51,10 +51,36 @@
     artworkImageView.layer.borderColor = [UIColor blackColor].CGColor;
     artworkImageView.layer.borderWidth = 3.0;
     
-    // Modification de l'image du bouton de partage
-    UIImage *ButtonImage = [UIImage imageNamed:@"Grey Button.png"];
-    UIImage *stretchableButton = [ButtonImage stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-    [shareButton setBackgroundImage:stretchableButton forState:UIControlStateNormal];
+    // Modification du bouton de partage
+    shareButton.layer.masksToBounds = YES;
+    shareButton.layer.cornerRadius = 8.0;
+    [shareButton setTitleColor:[UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:0.8] forState:UIControlStateNormal];
+    shareButton.layer.borderColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:0.6].CGColor;
+    shareButton.layer.borderWidth = 1.5;
+    
+    // Would simply display a grey background
+    //[shareButton setBackgroundColor:[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.75]];
+    
+    // Sets a gradient on button's background
+    CAGradientLayer *shineLayer;
+    shineLayer = [CAGradientLayer layer];
+    shineLayer.frame = shareButton.layer.bounds;
+    shineLayer.colors = [NSArray arrayWithObjects:
+                         (id)[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.75].CGColor,
+                         (id)[UIColor colorWithWhite:1.0f alpha:0.1f].CGColor,
+                         (id)[UIColor colorWithWhite:0.75f alpha:0.1f].CGColor,
+                         (id)[UIColor colorWithWhite:0.4f alpha:0.1f].CGColor,
+                         (id)[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.75].CGColor,
+                         nil];
+    shineLayer.locations = [NSArray arrayWithObjects:
+                            [NSNumber numberWithFloat:0.0f],
+                            [NSNumber numberWithFloat:0.5f],
+                            [NSNumber numberWithFloat:0.5f],
+                            [NSNumber numberWithFloat:0.8f],
+                            [NSNumber numberWithFloat:1.0f],
+                            nil];
+    [shareButton.layer addSublayer:shineLayer];
+    
     
     // Modification du bouton Facebook
     facebookButton.layer.masksToBounds = YES;
@@ -229,6 +255,8 @@
 
 - (void) updateSongPlayed
 {
+    NSLog(@"updateSongPlayed");
+
     artworkImageView.layer.borderColor = [UIColor redColor].CGColor;
 
     MPMediaItem *currentItem = [musicPlayer nowPlayingItem];
@@ -238,11 +266,16 @@
     if (artwork)
         {
         artworkImage = [artwork imageWithSize: CGSizeMake (256, 256)];
-        [shareButton setHidden:NO];
+        shareButton.alpha = 1.0;
+        shareButton.enabled = YES;
+        //[shareButton setHidden:NO];   // Won't work, I don't know why
         }
     else
-        [shareButton setHidden:YES];
-    
+        {
+        shareButton.alpha = 0.25;
+        shareButton.enabled = NO;
+        //[shareButton setHidden:YES];   // Won't work, I don't know why
+        }
     
     [artworkImageView setImage:artworkImage];
     
