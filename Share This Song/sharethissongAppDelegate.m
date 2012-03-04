@@ -167,6 +167,11 @@
     NSLog(@"requestLoading");
 }
 
+- (void)fbDidExtendToken:(NSString*)accessToken
+               expiresAt:(NSDate*)expiresAt
+{
+}
+
 - (void) launchFacebook
 {
     

@@ -36,7 +36,8 @@
 
         
     IBOutlet UIButton *shareButton;    
-    IBOutlet UIButton *facebookButton;    
+    IBOutlet UIButton *facebookButton; 
+    IBOutlet UITextView *editablemsg;
 
     MPMusicPlayerController *musicPlayer;
     
@@ -46,7 +47,7 @@
     UILabel *tempLabel;
         
     NSTimer *timer;
-
+    BOOL addacomment;
     }
 
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
@@ -62,12 +63,10 @@
 
 @property (nonatomic, retain) UIButton *shareButton;
 @property (nonatomic, retain) UIButton *facebookButton;
-
-
+@property (nonatomic, retain) UITextView *editablemsg;
 
 - (IBAction)sharingRequest:(id)sender;
 - (IBAction)facebookAction:(id)sender;
-
 
 - (void) registerMediaPlayerNotifications;
 - (void) updateSongPlayed;

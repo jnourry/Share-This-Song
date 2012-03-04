@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2177" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <development version="4200" defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1173"/>
     </dependencies>
     <scenes>
+        <!--Sharethissong Main View Controller-->
         <scene sceneID="4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -98,6 +99,13 @@
                                     <action selector="sharingRequest:" destination="2" eventType="touchUpInside" id="O57-Fq-0FQ"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000001192092896" contentMode="scaleToFill" text=" " id="Yy2-Qi-sk9" userLabel="editablemsg">
+                                <rect key="frame" x="533" y="499" width="327" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="13">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -121,6 +129,7 @@
                         <outlet property="Artistlabel" destination="Zr8-55-oRN" id="r5z-Hm-BCy"/>
                         <outlet property="Songlabel" destination="A4q-I8-vu5" id="WqE-Kf-UwU"/>
                         <outlet property="artworkImageView" destination="3Fg-bI-gDV" id="4qm-Ps-JAN"/>
+                        <outlet property="editablemsg" destination="Yy2-Qi-sk9" id="4g6-Q8-Ild"/>
                         <outlet property="facebookButton" destination="EHl-9W-m9t" id="i8g-Ne-AQX"/>
                         <outlet property="fbOnOfflabel" destination="Kmh-b9-ehm" id="WfF-XH-VNk"/>
                         <outlet property="progressionlabel" destination="m5T-sm-LNN" id="Fag-Vw-ui7"/>
@@ -131,8 +140,9 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-498" y="-21"/>
+            <point key="canvasLocation" x="-410" y="111"/>
         </scene>
+        <!--Sharethissong Flipside View Controller-->
         <scene sceneID="7">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6" sceneMemberID="firstResponder"/>
@@ -173,7 +183,7 @@
                                 <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Settings :" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="pxa-6o-msv" userLabel="settings-label">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Settings :" lineBreakMode="tailTruncation" minimumFontSize="10" id="pxa-6o-msv" userLabel="settings-label">
                                 <rect key="frame" x="20" y="99" width="110" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -280,6 +290,7 @@ You can use the Facebook button to log in or out.</string>
                 <relationship kind="outlet" name="Artistlabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="Songlabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="artworkImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="editablemsg" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="facebookButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fbOnOfflabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="progressionlabel" candidateClass="UILabel"/>

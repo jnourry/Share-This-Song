@@ -8,6 +8,7 @@
 
 #import "sharethissongMainViewController.h"
 #import "sharethissongAppDelegate.h"
+#import "JSON.h"
 
 
 @implementation sharethissongMainViewController
@@ -26,6 +27,7 @@
 @synthesize shareButton; 
 @synthesize facebookButton; 
 @synthesize artworkImageView;
+@synthesize editablemsg;
 
 - (void)didReceiveMemoryWarning
 {
@@ -106,6 +108,18 @@
     [self.view addSubview:tempLabel];
     tempLabel.alpha = 0.0f;
     
+    
+    // Modification du Text View avec des bords arrondis et gris
+    [editablemsg.layer setMasksToBounds:YES];
+    
+    editablemsg.layer.cornerRadius = 9.0;
+    editablemsg.layer.borderColor = [UIColor grayColor].CGColor;
+    editablemsg.layer.borderWidth = 1.5;
+    editablemsg.text = NSLocalizedString(@"edit your comment here",@"");
+    editablemsg.alpha = 0.6;
+    
+    addacomment = FALSE;
+    
     [self updateSongPlayed];
     
     [self updateFacebookLogo];
@@ -113,6 +127,13 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshFBbutton:) name:@"refreshFBbutton" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(FBrequestDidLoad:) name:@"FBrequestDidLoad" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(beganEditing:) name:UITextViewTextDidBeginEditingNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endEditing:) name:UITextViewTextDidEndEditingNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editChanged:) name:UITextViewTextDidChangeNotification object:nil];
+    
     
     // Get user preferences and set the switch on if it's the first run
 	NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
@@ -141,6 +162,15 @@
                                                   object: nil];
     [[NSNotificationCenter defaultCenter] removeObserver: self
                                                     name: @"FBrequestDidLoad"
+                                                  object: nil];
+    [[NSNotificationCenter defaultCenter] removeObserver: self
+                                                    name: @"editChanged"
+                                                  object: nil];
+    [[NSNotificationCenter defaultCenter] removeObserver: self
+                                                    name: @"beganEditing"
+                                                  object: nil];
+    [[NSNotificationCenter defaultCenter] removeObserver: self
+                                                    name: @"endEditing"
                                                   object: nil];
     [musicPlayer endGeneratingPlaybackNotifications];
 }
@@ -246,7 +276,6 @@
     [musicPlayer beginGeneratingPlaybackNotifications];
 }
 
-
 - (void) handle_NowPlayingItemChanged: (id) notification
 {
     [self updateSongPlayed];
@@ -256,6 +285,9 @@
 - (void) updateSongPlayed
 {
     NSLog(@"updateSongPlayed");
+    
+    editablemsg.text = NSLocalizedString(@"edit your comment here",@"");
+    addacomment = FALSE;
 
     artworkImageView.layer.borderColor = [UIColor redColor].CGColor;
 
@@ -444,14 +476,34 @@
         iTunesSongURL = @"http://www.itunes.com";
         }
     
-    params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       messageShareThisSong, @"message", 
-                                       artworkURL, @"picture",
-                                       Artistlabel.text, @"name",
-                                       Songlabel.text, @"caption",
-                                       Albumlabel.text, @"description",
-                                       iTunesSongURL, @"link",
-                                       nil];
+    if (addacomment) 
+    {
+        NSDictionary *properties = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                           editablemsg.text,@">", 
+                                           nil];
+        SBJsonWriter *writer = [SBJsonWriter alloc];
+        NSString *propStr = [writer stringWithObject:properties];
+        
+        params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                  messageShareThisSong, @"message", 
+                  artworkURL, @"picture",
+                  Artistlabel.text, @"name",
+                  Songlabel.text, @"caption",
+                  Albumlabel.text, @"description",
+                  iTunesSongURL, @"link",
+                  propStr,@"properties",
+                  nil];
+    }
+    else
+        params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                           messageShareThisSong, @"message", 
+                                           artworkURL, @"picture",
+                                           Artistlabel.text, @"name",
+                                           Songlabel.text, @"caption",
+                                           Albumlabel.text, @"description",
+                                           iTunesSongURL, @"link",
+                                           nil];
+    
     NSLog(@"params : %@", params);
     
     sharethissongAppDelegate *appDelegate = (sharethissongAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -459,6 +511,12 @@
     Facebook *theFacebook = [appDelegate facebook];
     
     [theFacebook requestWithGraphPath:@"me/feed" andParams:params andHttpMethod:@"POST" andDelegate:appDelegate];
+    
+    // Si on voulait ajouter un commentaire : avec le result de FBrequest
+    /*[facebook requestWithGraphPath:[NSString stringWithFormat:@"/%@/comments",id_result] 
+                        andParams:params 
+                        andHttpMethod:@"POST" 
+                        andDelegate:self];*/
 
 }
 
@@ -534,6 +592,9 @@
 -(void)FBrequestDidLoad:(NSNotification *) notification
 {    
     NSLog(@"FBrequestDidLoad");
+    
+    addacomment = FALSE;
+    
     progressionlabel.text = [NSString stringWithFormat:NSLocalizedString(@"FB request did load",@"")];
 
     if (iTunesSongURL != @"http://www.itunes.com")
@@ -607,4 +668,43 @@
         [tempLabel setCenter:CGPointMake(kiPadHeight/2.0, kiPadWidth/2.0)];
     
 }
+
+-(void)beganEditing:(NSNotification *)notification 
+{
+    NSLog(@"UITextViewTextDidBeginEditingNotification");
+
+    if (!addacomment) 
+    {
+        editablemsg.text = @"";
+    }
+    editablemsg.alpha = 1.0;
+}
+
+-(void)editChanged:(NSNotification *)notification 
+{
+    NSLog(@"UITextViewTextDidChangeNotification");
+    if (![editablemsg.text isEqualToString:@""])
+        {
+        NSLog(@"Message édité : %@",editablemsg.text);
+        addacomment = TRUE;
+            
+        // Pour se remettre sur l'écran dès qu'on touche Done
+        if([editablemsg.text hasSuffix:@"\n"])
+            [editablemsg resignFirstResponder];
+        }
+}
+
+-(void)endEditing:(NSNotification *)notification 
+{
+    NSLog(@"UITextViewTextDidEndEditingNotification");
+    
+    editablemsg.alpha = 0.6;
+}
+
+// Pour se remettre sur l'écran si on touche en dehors du clavier
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
+{
+    [editablemsg resignFirstResponder];
+}
+
 @end
